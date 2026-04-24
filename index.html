@@ -22,297 +22,321 @@
         body { font-family: 'Lora', Georgia, serif; color: var(--text-dark); background: var(--midnight); overflow-x: hidden; line-height: 1.7; }
 
 ```
-    /* ═══ NAV ═══ */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0.8rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(13,13,38,0.92); backdrop-filter: blur(10px); }
-    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: var(--gold); text-decoration: none; }
-    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
-    .nav-links a { color: var(--gold-light); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s; }
-    .nav-links a:hover { color: #fff; }
-    .mobile-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
-    .mobile-toggle span { width: 26px; height: 2px; background: var(--gold-light); }
+/* ═══ NAV ═══ */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0.8rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(13,13,38,0.92); backdrop-filter: blur(10px); }
+.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: var(--gold); text-decoration: none; }
+.nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
+.nav-links a { color: var(--gold-light); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s; }
+.nav-links a:hover { color: #fff; }
+.mobile-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
+.mobile-toggle span { width: 26px; height: 2px; background: var(--gold-light); }
 
-    /* ════ HERO ════ */
-    .hero { background: var(--midnight); padding-top: 50px; }
-    .hero-image-wrapper { width: 100%; }
-    .hero-image-wrapper img { width: 100%; height: auto; display: block; }
-    .hero-text { background: var(--midnight); text-align: center; padding: 3rem 2rem 4rem; }
-    .hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.4em; text-transform: uppercase; margin-bottom: 1.2rem; }
-    .hero-main-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5.5vw, 4.2rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto; }
-    .hero-main-title em { font-style: italic; color: var(--gold); }
-    .hero-cta { display: inline-block; padding: 1.2rem 4rem; background: var(--gold); color: var(--midnight); text-decoration: none; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; border: 2px solid var(--gold); transition: all 0.3s; }
-    .hero-cta:hover { background: transparent; color: var(--gold); }
+/* Community cloud nav item */
+.nav-community-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-bottom: 2px;
+}
+.nav-community-cloud {
+    font-size: 1.1rem;
+    line-height: 1;
+    display: block;
+    filter: drop-shadow(0 0 6px rgba(255,220,100,0.85));
+    animation: cloudFloat 3s ease-in-out infinite;
+}
+.nav-community-rays {
+    position: absolute;
+    top: 1.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 16px;
+    pointer-events: none;
+}
+.nav-community-link {
+    margin-top: 18px;
+    display: block;
+    color: var(--gold) !important;
+    font-weight: 700 !important;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.nav-community-link:hover { color: #fff !important; }
 
-    /* ════════════════════════════════════════════════ */
-    /* MUSIC PLAYER SECTION                            */
-    /* ════════════════════════════════════════════════ */
-    .music-section {
-        background: linear-gradient(180deg, var(--midnight) 0%, #0a0a1f 40%, var(--midnight) 100%);
-        padding: 5rem 2rem 6rem;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-    /* Subtle decorative glow behind the player */
-    .music-section::before {
-        content: '';
-        position: absolute;
-        top: 50%; left: 50%;
-        transform: translate(-50%, -50%);
-        width: 600px; height: 300px;
-        background: radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 70%);
-        pointer-events: none;
-    }
-    .music-inner {
-        max-width: 780px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-    }
-    .music-label {
-        font-family: 'Lora', serif;
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.35em;
-        color: var(--gold);
-        margin-bottom: 0.8rem;
-    }
-    .music-title {
-        font-family: 'Cormorant Garamond', serif;
-        font-size: clamp(2rem, 4.5vw, 3.2rem);
-        font-weight: 300;
-        color: #fff;
-        line-height: 1.2;
-        margin-bottom: 0.5rem;
-    }
-    .music-title em {
-        font-style: italic;
-        color: var(--gold);
-    }
-    .music-artist {
-        font-family: 'Lora', serif;
-        font-size: 1rem;
-        color: rgba(245,230,200,0.45);
-        letter-spacing: 0.15em;
-        text-transform: uppercase;
-        margin-bottom: 2.5rem;
-    }
+@keyframes cloudFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
 
-    /* Gold border frame around the YouTube player */
-    .player-frame {
-        position: relative;
-        display: inline-block;
-        width: 100%;
-        max-width: 680px;
-    }
-    /* Decorative corner accents */
-    .player-frame::before,
-    .player-frame::after {
-        content: '';
-        position: absolute;
-        width: 28px; height: 28px;
-        border-color: var(--gold);
-        border-style: solid;
-        z-index: 2;
-    }
-    .player-frame::before { top: -6px; left: -6px; border-width: 3px 0 0 3px; }
-    .player-frame::after  { bottom: -6px; right: -6px; border-width: 0 3px 3px 0; }
-    .player-frame-inner {
-        position: relative;
-        width: 100%;
-        padding-bottom: 56.25%; /* 16:9 */
-        overflow: hidden;
-        border: 1px solid rgba(201,168,76,0.25);
-        box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,168,76,0.08);
-    }
-    .player-frame-inner iframe {
-        position: absolute;
-        top: 0; left: 0;
-        width: 100%; height: 100%;
-        border: none;
-    }
+/* ════ HERO ════ */
+.hero { background: var(--midnight); padding-top: 50px; }
+.hero-image-wrapper { width: 100%; }
+.hero-image-wrapper img { width: 100%; height: auto; display: block; }
+.hero-text { background: var(--midnight); text-align: center; padding: 3rem 2rem 4rem; }
+.hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.4em; text-transform: uppercase; margin-bottom: 1.2rem; }
+.hero-main-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5.5vw, 4.2rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto; }
+.hero-main-title em { font-style: italic; color: var(--gold); }
+.hero-cta { display: inline-block; padding: 1.2rem 4rem; background: var(--gold); color: var(--midnight); text-decoration: none; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; border: 2px solid var(--gold); transition: all 0.3s; }
+.hero-cta:hover { background: transparent; color: var(--gold); }
 
-    /* Corner accent squares (opposite corners) */
-    .player-corner-tl,
-    .player-corner-br {
-        position: absolute;
-        width: 28px; height: 28px;
-        border-color: var(--gold);
-        border-style: solid;
-        z-index: 2;
-    }
-    .player-corner-tl { top: -6px; right: -6px; border-width: 3px 3px 0 0; }
-    .player-corner-br { bottom: -6px; left: -6px; border-width: 0 0 3px 3px; }
+/* ════════════════════════════════════════════════ */
+/* MUSIC PLAYER SECTION                            */
+/* ════════════════════════════════════════════════ */
+.music-section {
+    background: linear-gradient(180deg, var(--midnight) 0%, #0a0a1f 40%, var(--midnight) 100%);
+    padding: 5rem 2rem 6rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.music-section::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 300px;
+    background: radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 70%);
+    pointer-events: none;
+}
+.music-inner {
+    max-width: 780px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+.music-label {
+    font-family: 'Lora', serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+}
+.music-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+.music-title em {
+    font-style: italic;
+    color: var(--gold);
+}
+.music-artist {
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: rgba(245,230,200,0.45);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+}
 
-    .music-quote {
-        margin: 2.5rem auto 0;
-        max-width: 520px;
-        font-family: 'Cormorant Garamond', serif;
-        font-size: clamp(1.2rem, 2.5vw, 1.55rem);
-        font-style: italic;
-        font-weight: 300;
-        color: rgba(245,230,200,0.55);
-        line-height: 1.6;
-    }
-    .music-quote span {
-        display: block;
-        font-family: 'Lora', serif;
-        font-style: normal;
-        font-size: 0.78rem;
-        letter-spacing: 0.18em;
-        text-transform: uppercase;
-        color: var(--gold);
-        margin-top: 0.8rem;
-        opacity: 0.7;
-    }
+.player-frame {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 680px;
+}
+.player-frame::before,
+.player-frame::after {
+    content: '';
+    position: absolute;
+    width: 28px; height: 28px;
+    border-color: var(--gold);
+    border-style: solid;
+    z-index: 2;
+}
+.player-frame::before { top: -6px; left: -6px; border-width: 3px 0 0 3px; }
+.player-frame::after  { bottom: -6px; right: -6px; border-width: 0 3px 3px 0; }
+.player-frame-inner {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    overflow: hidden;
+    border: 1px solid rgba(201,168,76,0.25);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,168,76,0.08);
+}
+.player-frame-inner iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    border: none;
+}
 
-    /* Divider between player and EMET section */
-    .gold-divider {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-        padding: 0 2rem;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-    .gold-divider::before,
-    .gold-divider::after {
-        content: '';
-        flex: 1;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    }
-    .gold-divider-star {
-        color: var(--gold);
-        font-size: 0.8rem;
-        opacity: 0.6;
-    }
+.player-corner-tl,
+.player-corner-br {
+    position: absolute;
+    width: 28px; height: 28px;
+    border-color: var(--gold);
+    border-style: solid;
+    z-index: 2;
+}
+.player-corner-tl { top: -6px; right: -6px; border-width: 3px 3px 0 0; }
+.player-corner-br { bottom: -6px; left: -6px; border-width: 0 0 3px 3px; }
 
-    /* ════ EMET ════ */
-    .emet-section { background: var(--deep-blue); text-align: center; padding: 6rem 2rem; color: var(--text-light); }
-    .emet-inner { max-width: 1000px; margin: 0 auto; }
-    .emet-hero-image { width: 100%; max-width: 950px; margin: 2rem auto 4rem; border: 3px solid var(--gold); overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
-    .emet-hero-image img { width: 100%; display: block; }
+.music-quote {
+    margin: 2.5rem auto 0;
+    max-width: 520px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+    font-style: italic;
+    font-weight: 300;
+    color: rgba(245,230,200,0.55);
+    line-height: 1.6;
+}
+.music-quote span {
+    display: block;
+    font-family: 'Lora', serif;
+    font-style: normal;
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 0.8rem;
+    opacity: 0.7;
+}
 
-    /* ═══ 3D SYMBOLIC HEBREW LETTERS ═══ */
-    .emet-letters { display: flex; justify-content: center; gap: clamp(3rem, 8vw, 7rem); margin: 4rem 0 2rem; direction: rtl; }
-    .emet-letter { text-align: center; opacity: 0; transform: translateY(50px) scale(0.85); }
-    .emet-letter.animate { animation: emetReveal 1s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
-    .emet-letter:nth-child(1) { animation-delay: 0.1s; }
-    .emet-letter:nth-child(2) { animation-delay: 0.45s; }
-    .emet-letter:nth-child(3) { animation-delay: 0.8s; }
-    @keyframes emetReveal { to { opacity: 1; transform: translateY(0) scale(1); } }
+.gold-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0 2rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+.gold-divider::before,
+.gold-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+.gold-divider-star {
+    color: var(--gold);
+    font-size: 0.8rem;
+    opacity: 0.6;
+}
 
-    .emet-letter .hebrew-char {
-        font-family: 'Noto Sans Hebrew', serif; font-size: clamp(9rem, 20vw, 16rem); font-weight: 700; display: block; line-height: 1; color: var(--gold);
-        text-shadow: 1px 1px 0 #B8922E, 2px 2px 0 #A07A20, 3px 3px 0 #8B6914, 4px 4px 0 #705510, 5px 5px 0 #5A440D, 6px 6px 0 #4A380A, 7px 7px 0 #3A2C08, 8px 8px 15px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.2), 0 0 80px rgba(201,168,76,0.1);
-        transition: transform 0.3s, text-shadow 0.3s; cursor: default;
-    }
-    .emet-letter:hover .hebrew-char {
-        transform: scale(1.08);
-        text-shadow: 1px 1px 0 #B8922E, 2px 2px 0 #A07A20, 3px 3px 0 #8B6914, 4px 4px 0 #705510, 5px 5px 0 #5A440D, 6px 6px 0 #4A380A, 7px 7px 0 #3A2C08, 8px 8px 15px rgba(0,0,0,0.6), 0 0 60px rgba(201,168,76,0.4), 0 0 120px rgba(201,168,76,0.2);
-    }
-    .emet-letter .letter-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--gold); margin-top: 1rem; font-weight: 600; }
-    .emet-letter .letter-meaning { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--gold-light); margin-top: 0.4rem; font-style: italic; }
-    .emet-letter .letter-detail { font-size: 0.95rem; color: rgba(245,230,200,0.5); margin-top: 0.3rem; }
+/* ════ EMET ════ */
+.emet-section { background: var(--deep-blue); text-align: center; padding: 6rem 2rem; color: var(--text-light); }
+.emet-inner { max-width: 1000px; margin: 0 auto; }
+.emet-hero-image { width: 100%; max-width: 950px; margin: 2rem auto 4rem; border: 3px solid var(--gold); overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+.emet-hero-image img { width: 100%; display: block; }
 
-    .emet-text { font-size: clamp(1.15rem, 2vw, 1.35rem); line-height: 2; color: rgba(245,230,200,0.8); max-width: 720px; margin: 2rem auto; }
+/* ═══ 3D SYMBOLIC HEBREW LETTERS ═══ */
+.emet-letters { display: flex; justify-content: center; gap: clamp(3rem, 8vw, 7rem); margin: 4rem 0 2rem; direction: rtl; }
+.emet-letter { text-align: center; opacity: 0; transform: translateY(50px) scale(0.85); }
+.emet-letter.animate { animation: emetReveal 1s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
+.emet-letter:nth-child(1) { animation-delay: 0.1s; }
+.emet-letter:nth-child(2) { animation-delay: 0.45s; }
+.emet-letter:nth-child(3) { animation-delay: 0.8s; }
+@keyframes emetReveal { to { opacity: 1; transform: translateY(0) scale(1); } }
 
-    /* ═══ GOLD VERSE BOX ═══ */
-    .verse-box { margin: 3rem auto; max-width: 780px; padding: 2.5rem 3rem; border: 3px solid var(--gold); background: rgba(201,168,76,0.04); position: relative; }
-    .verse-box::before, .verse-box::after { content: '✦'; position: absolute; color: var(--gold); font-size: 1.2rem; }
-    .verse-box::before { top: -0.7rem; left: 50%; transform: translateX(-50%); background: var(--deep-blue); padding: 0 1rem; }
-    .verse-box::after { bottom: -0.7rem; left: 50%; transform: translateX(-50%); background: var(--deep-blue); padding: 0 1rem; }
-    .verse-box p { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 600; font-style: italic; color: var(--gold-light); line-height: 1.4; }
-    .verse-box cite { display: block; margin-top: 1rem; font-family: 'Lora', serif; font-style: normal; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; }
+.emet-letter .hebrew-char {
+    font-family: 'Noto Sans Hebrew', serif; font-size: clamp(9rem, 20vw, 16rem); font-weight: 700; display: block; line-height: 1; color: var(--gold);
+    text-shadow: 1px 1px 0 #B8922E, 2px 2px 0 #A07A20, 3px 3px 0 #8B6914, 4px 4px 0 #705510, 5px 5px 0 #5A440D, 6px 6px 0 #4A380A, 7px 7px 0 #3A2C08, 8px 8px 15px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.2), 0 0 80px rgba(201,168,76,0.1);
+    transition: transform 0.3s, text-shadow 0.3s; cursor: default;
+}
+.emet-letter:hover .hebrew-char {
+    transform: scale(1.08);
+    text-shadow: 1px 1px 0 #B8922E, 2px 2px 0 #A07A20, 3px 3px 0 #8B6914, 4px 4px 0 #705510, 5px 5px 0 #5A440D, 6px 6px 0 #4A380A, 7px 7px 0 #3A2C08, 8px 8px 15px rgba(0,0,0,0.6), 0 0 60px rgba(201,168,76,0.4), 0 0 120px rgba(201,168,76,0.2);
+}
+.emet-letter .letter-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--gold); margin-top: 1rem; font-weight: 600; }
+.emet-letter .letter-meaning { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--gold-light); margin-top: 0.4rem; font-style: italic; }
+.emet-letter .letter-detail { font-size: 0.95rem; color: rgba(245,230,200,0.5); margin-top: 0.3rem; }
 
-    .emet-callout { margin: 3rem auto; max-width: 720px; padding: 2.5rem; background: rgba(255,255,255,0.04); border-left: 5px solid var(--gold); text-align: left; }
-    .emet-callout h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--gold); margin-bottom: 1rem; }
-    .emet-callout p { font-size: 1.1rem; line-height: 2; color: rgba(245,230,200,0.75); }
+.emet-text { font-size: clamp(1.15rem, 2vw, 1.35rem); line-height: 2; color: rgba(245,230,200,0.8); max-width: 720px; margin: 2rem auto; }
 
-    /* ════ MOSES ════ */
-    .moses-banner { width: 100%; background: var(--midnight); }
-    .moses-banner img { width: 100%; height: auto; display: block; }
+/* ═══ GOLD VERSE BOX ═══ */
+.verse-box { margin: 3rem auto; max-width: 780px; padding: 2.5rem 3rem; border: 3px solid var(--gold); background: rgba(201,168,76,0.04); position: relative; }
+.verse-box::before, .verse-box::after { content: '✦'; position: absolute; color: var(--gold); font-size: 1.2rem; }
+.verse-box::before { top: -0.7rem; left: 50%; transform: translateX(-50%); background: var(--deep-blue); padding: 0 1rem; }
+.verse-box::after { bottom: -0.7rem; left: 50%; transform: translateX(-50%); background: var(--deep-blue); padding: 0 1rem; }
+.verse-box p { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 600; font-style: italic; color: var(--gold-light); line-height: 1.4; }
+.verse-box cite { display: block; margin-top: 1rem; font-family: 'Lora', serif; font-style: normal; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; }
 
-    /* ════ COMMANDMENTS ════ */
-    .commandments-section { background: linear-gradient(180deg, var(--midnight) 0%, var(--deep-blue) 100%); text-align: center; padding: 5rem 2rem; color: var(--text-light); }
-    .commandments-inner { max-width: 1100px; margin: 0 auto; }
-    .tablets-container { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 3rem auto; max-width: 950px; }
-    .tablet { background: linear-gradient(170deg, #D4C4A0 0%, #C4B48E 30%, #B8A67A 100%); border-radius: 24px 24px 6px 6px; padding: 3rem 2.5rem; box-shadow: 0 10px 40px rgba(0,0,0,0.35), inset 0 2px 0 rgba(255,255,255,0.4); text-align: left; color: var(--text-dark); }
-    .tablet-header { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: var(--deep-blue); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.8rem; text-align: center; border-bottom: 2px solid rgba(26,26,62,0.2); padding-bottom: 1rem; }
-    .commandment { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: baseline; }
-    .commandment-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--gold-dark); flex-shrink: 0; min-width: 2.5rem; text-align: right; line-height: 1.2; }
-    .commandment-text { font-family: 'Lora', serif; font-size: 1.1rem; color: var(--text-dark); line-height: 1.7; }
-    .commandments-message { max-width: 700px; margin: 2rem auto 0; font-size: 1.15rem; line-height: 2; color: rgba(245,230,200,0.75); }
+.emet-callout { margin: 3rem auto; max-width: 720px; padding: 2.5rem; background: rgba(255,255,255,0.04); border-left: 5px solid var(--gold); text-align: left; }
+.emet-callout h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--gold); margin-bottom: 1rem; }
+.emet-callout p { font-size: 1.1rem; line-height: 2; color: rgba(245,230,200,0.75); }
 
-    /* ════ PILLARS ════ */
-    .pillars-section { background: var(--cream); padding: 6rem 2rem; }
-    .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; max-width: 1100px; margin: 3rem auto 0; }
-    .pillar-card { background: #fff; border: 1px solid rgba(201,168,76,0.25); padding: 2.5rem 2rem; position: relative; transition: all 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
-    .pillar-card:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
-    .pillar-number { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: var(--gold); opacity: 0.2; position: absolute; top: 0.8rem; right: 1.5rem; }
-    .pillar-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--deep-blue); margin-bottom: 1rem; }
-    .pillar-text { font-size: 1rem; line-height: 1.8; color: #555; }
-    .pillar-verse { margin-top: 1.5rem; font-style: italic; font-size: 0.9rem; color: var(--gold-dark); border-top: 1px solid rgba(201,168,76,0.25); padding-top: 1rem; }
+/* ════ MOSES ════ */
+.moses-banner { width: 100%; background: var(--midnight); }
+.moses-banner img { width: 100%; height: auto; display: block; }
 
-    /* ════ KINGDOM ════ */
-    .kingdom-section { background: var(--deep-blue); text-align: center; color: var(--text-light); padding: 6rem 2rem; }
-    .kingdom-inner { max-width: 780px; margin: 0 auto; }
+/* ════ COMMANDMENTS ════ */
+.commandments-section { background: linear-gradient(180deg, var(--midnight) 0%, var(--deep-blue) 100%); text-align: center; padding: 5rem 2rem; color: var(--text-light); }
+.commandments-inner { max-width: 1100px; margin: 0 auto; }
+.tablets-container { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 3rem auto; max-width: 950px; }
+.tablet { background: linear-gradient(170deg, #D4C4A0 0%, #C4B48E 30%, #B8A67A 100%); border-radius: 24px 24px 6px 6px; padding: 3rem 2.5rem; box-shadow: 0 10px 40px rgba(0,0,0,0.35), inset 0 2px 0 rgba(255,255,255,0.4); text-align: left; color: var(--text-dark); }
+.tablet-header { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: var(--deep-blue); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.8rem; text-align: center; border-bottom: 2px solid rgba(26,26,62,0.2); padding-bottom: 1rem; }
+.commandment { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: baseline; }
+.commandment-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--gold-dark); flex-shrink: 0; min-width: 2.5rem; text-align: right; line-height: 1.2; }
+.commandment-text { font-family: 'Lora', serif; font-size: 1.1rem; color: var(--text-dark); line-height: 1.7; }
+.commandments-message { max-width: 700px; margin: 2rem auto 0; font-size: 1.15rem; line-height: 2; color: rgba(245,230,200,0.75); }
 
-<!-- Community nav link with cloud + rays -->
-<li>
-  <div style="display:flex;flex-direction:column;align-items:center;position:relative;">
-    <span style="font-size:1rem;filter:drop-shadow(0 0 6px rgba(255,220,100,0.8));animation:cloudFloat 3s ease-in-out infinite;">☁️</span>
-    <svg style="position:absolute;top:100%;left:50%;transform:translateX(-50%);width:34px;height:14px;pointer-events:none;" viewBox="0 0 34 14" xmlns="http://www.w3.org/2000/svg">
-      <line x1="17" y1="0" x2="3"  y2="14" stroke="rgba(255,215,80,0.5)" stroke-width="1"/>
-      <line x1="17" y1="0" x2="9"  y2="14" stroke="rgba(255,215,80,0.7)" stroke-width="1"/>
-      <line x1="17" y1="0" x2="17" y2="14" stroke="rgba(255,215,80,0.9)" stroke-width="1.5"/>
-      <line x1="17" y1="0" x2="25" y2="14" stroke="rgba(255,215,80,0.7)" stroke-width="1"/>
-      <line x1="17" y1="0" x2="31" y2="14" stroke="rgba(255,215,80,0.5)" stroke-width="1"/>
-    </svg>
-    <a href="community.html" style="color:#C9A84C;margin-top:4px;font-weight:700;">Community</a>
-  </div>
-</li>
-    /* ════ PRAYER ════ */
-    .prayer-section { background: var(--midnight); text-align: center; color: var(--text-light); padding: 6rem 2rem; }
-    .prayer-inner { max-width: 620px; margin: 0 auto; }
-    .prayer-form { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
-    .prayer-form input, .prayer-form textarea { width: 100%; padding: 1.1rem 1.3rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(201,168,76,0.3); color: #fff; font-family: 'Lora', serif; font-size: 1rem; outline: none; transition: border-color 0.3s; }
-    .prayer-form input::placeholder, .prayer-form textarea::placeholder { color: rgba(245,230,200,0.35); }
-    .prayer-form input:focus, .prayer-form textarea:focus { border-color: var(--gold); }
-    .prayer-form textarea { min-height: 150px; resize: vertical; }
-    .prayer-submit { padding: 1.2rem 3rem; background: var(--gold); border: 2px solid var(--gold); color: var(--midnight); font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; align-self: center; }
-    .prayer-submit:hover { background: transparent; color: var(--gold); }
-    .prayer-note { margin-top: 1.5rem; font-size: 0.85rem; color: rgba(245,230,200,0.35); font-style: italic; }
+/* ════ PILLARS ════ */
+.pillars-section { background: var(--cream); padding: 6rem 2rem; }
+.pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; max-width: 1100px; margin: 3rem auto 0; }
+.pillar-card { background: #fff; border: 1px solid rgba(201,168,76,0.25); padding: 2.5rem 2rem; position: relative; transition: all 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+.pillar-card:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+.pillar-number { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: var(--gold); opacity: 0.2; position: absolute; top: 0.8rem; right: 1.5rem; }
+.pillar-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--deep-blue); margin-bottom: 1rem; }
+.pillar-text { font-size: 1rem; line-height: 1.8; color: #555; }
+.pillar-verse { margin-top: 1.5rem; font-style: italic; font-size: 0.9rem; color: var(--gold-dark); border-top: 1px solid rgba(201,168,76,0.25); padding-top: 1rem; }
 
-    /* ════ FOOTER ════ */
-    .contact-bar { background: var(--deep-blue); text-align: center; padding: 3rem 2rem; border-top: 3px solid var(--gold); }
-    .contact-bar p { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--gold-light); margin-bottom: 0.5rem; }
-    .contact-bar a { color: var(--gold); text-decoration: none; font-size: 2.2rem; font-family: 'Cormorant Garamond', serif; font-weight: 700; }
-    .contact-bar .location { font-size: 0.9rem; color: rgba(245,230,200,0.35); margin-top: 0.75rem; }
-    footer { background: var(--midnight); padding: 1.5rem; text-align: center; }
-    .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
-    .footer-links a { color: rgba(245,230,200,0.35); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s; }
-    .footer-links a:hover { color: var(--gold); }
-    .footer-copy { font-size: 0.7rem; color: rgba(245,230,200,0.2); }
+/* ════ KINGDOM ════ */
+.kingdom-section { background: var(--deep-blue); text-align: center; color: var(--text-light); padding: 6rem 2rem; }
+.kingdom-inner { max-width: 780px; margin: 0 auto; }
 
-    /* ════ SHARED ════ */
-    .section-label { font-family: 'Lora', serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--gold); margin-bottom: 1rem; }
-    .section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.5rem; }
-    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+/* ════ PRAYER ════ */
+.prayer-section { background: var(--midnight); text-align: center; color: var(--text-light); padding: 6rem 2rem; }
+.prayer-inner { max-width: 620px; margin: 0 auto; }
+.prayer-form { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
+.prayer-form input, .prayer-form textarea { width: 100%; padding: 1.1rem 1.3rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(201,168,76,0.3); color: #fff; font-family: 'Lora', serif; font-size: 1rem; outline: none; transition: border-color 0.3s; }
+.prayer-form input::placeholder, .prayer-form textarea::placeholder { color: rgba(245,230,200,0.35); }
+.prayer-form input:focus, .prayer-form textarea:focus { border-color: var(--gold); }
+.prayer-form textarea { min-height: 150px; resize: vertical; }
+.prayer-submit { padding: 1.2rem 3rem; background: var(--gold); border: 2px solid var(--gold); color: var(--midnight); font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; align-self: center; }
+.prayer-submit:hover { background: transparent; color: var(--gold); }
+.prayer-note { margin-top: 1.5rem; font-size: 0.85rem; color: rgba(245,230,200,0.35); font-style: italic; }
 
-    @media (max-width: 768px) {
-        nav { padding: 0.6rem 1rem; }
-        .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(13,13,38,0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; }
-        .nav-links.open { display: flex; }
-        .mobile-toggle { display: flex; z-index: 1001; }
-        .pillars-grid, .testimonial-grid { grid-template-columns: 1fr; }
-        .tablets-container { grid-template-columns: 1fr; }
-        .verse-box { padding: 1.5rem; }
-        .emet-letters { gap: 1.5rem; }
-        .music-section { padding: 3.5rem 1.2rem 4rem; }
-    }
+/* ════ FOOTER ════ */
+.contact-bar { background: var(--deep-blue); text-align: center; padding: 3rem 2rem; border-top: 3px solid var(--gold); }
+.contact-bar p { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--gold-light); margin-bottom: 0.5rem; }
+.contact-bar a { color: var(--gold); text-decoration: none; font-size: 2.2rem; font-family: 'Cormorant Garamond', serif; font-weight: 700; }
+.contact-bar .location { font-size: 0.9rem; color: rgba(245,230,200,0.35); margin-top: 0.75rem; }
+footer { background: var(--midnight); padding: 1.5rem; text-align: center; }
+.footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+.footer-links a { color: rgba(245,230,200,0.35); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s; }
+.footer-links a:hover { color: var(--gold); }
+.footer-copy { font-size: 0.7rem; color: rgba(245,230,200,0.2); }
+
+/* ════ SHARED ════ */
+.section-label { font-family: 'Lora', serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--gold); margin-bottom: 1rem; }
+.section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.5rem; }
+.reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) {
+    nav { padding: 0.6rem 1rem; }
+    .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(13,13,38,0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; }
+    .nav-links.open { display: flex; }
+    .mobile-toggle { display: flex; z-index: 1001; }
+    .pillars-grid, .testimonial-grid { grid-template-columns: 1fr; }
+    .tablets-container { grid-template-columns: 1fr; }
+    .verse-box { padding: 1.5rem; }
+    .emet-letters { gap: 1.5rem; }
+    .music-section { padding: 3.5rem 1.2rem 4rem; }
+    .nav-community-rays { display: none; }
+    .nav-community-link { margin-top: 8px; }
+}
 </style>
 ```
 
@@ -330,6 +354,19 @@
         <li><a href="#pillars" onclick="closeNav()">The Way</a></li>
         <li><a href="#kingdom" onclick="closeNav()">His Kingdom</a></li>
         <li><a href="#pray" onclick="closeNav()">Let's Pray</a></li>
+        <li>
+            <div class="nav-community-wrap">
+                <span class="nav-community-cloud">&#9729;&#65039;</span>
+                <svg class="nav-community-rays" viewBox="0 0 36 16" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="18" y1="0" x2="2"  y2="16" stroke="rgba(255,215,80,0.45)" stroke-width="1"/>
+                    <line x1="18" y1="0" x2="8"  y2="16" stroke="rgba(255,215,80,0.65)" stroke-width="1"/>
+                    <line x1="18" y1="0" x2="18" y2="16" stroke="rgba(255,215,80,0.95)" stroke-width="1.5"/>
+                    <line x1="18" y1="0" x2="28" y2="16" stroke="rgba(255,215,80,0.65)" stroke-width="1"/>
+                    <line x1="18" y1="0" x2="34" y2="16" stroke="rgba(255,215,80,0.45)" stroke-width="1"/>
+                </svg>
+                <a href="community.html" onclick="closeNav()" class="nav-community-link">Community</a>
+            </div>
+        </li>
     </ul>
     <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
@@ -533,10 +570,6 @@
     </div>
 </section>
 
-<!-- COMMUNITY -->
-
-        
-
 <!-- PRAYER -->
 
 <section class="prayer-section" id="pray">
@@ -566,7 +599,15 @@
 <!-- FOOTER -->
 
 <footer>
-    <div class="footer-links"><a href="#home">Home</a><a href="#emet">EMET</a><a href="#commandments">Commandments</a><a href="#pillars">The Way</a><a href="#kingdom">His Kingdom</a><a href="#pray">Pray</a></div>
+    <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#emet">EMET</a>
+        <a href="#commandments">Commandments</a>
+        <a href="#pillars">The Way</a>
+        <a href="#kingdom">His Kingdom</a>
+        <a href="#pray">Pray</a>
+        <a href="community.html">Community</a>
+    </div>
     <p class="footer-copy">&copy; 2026 I Believe In You &mdash; All Rights Reserved. <span style="color:#C46B6B;">&hearts;</span></p>
 </footer>
 
