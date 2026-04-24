@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+#my<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -73,12 +73,38 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0.8rem
 }
 
 /* ════ HERO ════ */
-.hero { background: var(--midnight); padding-top: 50px; }
-.hero-image-wrapper { width: 100%; }
-.hero-image-wrapper img { width: 100%; height: auto; display: block; }
-.hero-text { background: var(--midnight); text-align: center; padding: 3rem 2rem 4rem; }
-.hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.4em; text-transform: uppercase; margin-bottom: 1.2rem; }
-.hero-main-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5.5vw, 4.2rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto; }
+/* ── Full-bleed storm photo hero ── */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    padding-top: 70px;
+}
+.hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('IMG_6609.jpeg');
+    background-size: cover;
+    background-position: center 25%;
+    filter: brightness(0.42);
+}
+.hero-god-rays {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 55% 75% at 50% 8%, rgba(255,195,70,0.22) 0%, rgba(255,150,30,0.09) 45%, transparent 70%);
+    pointer-events: none;
+}
+.hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(13,13,38,0.05) 0%, rgba(13,13,38,0.3) 55%, rgba(13,13,38,0.92) 100%);
+}
+.hero-content {
+    position: relative; z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    max-width: 880px;
+}
+.hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.4em; text-transform: uppercase; margin-bottom: 1.2rem; text-shadow: 0 1px 12px rgba(0,0,0,0.7); }
+.hero-main-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.6rem, 6vw, 4.8rem); font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 2rem; text-shadow: 0 2px 30px rgba(0,0,0,0.65); }
 .hero-main-title em { font-style: italic; color: var(--gold); }
 .hero-cta { display: inline-block; padding: 1.2rem 4rem; background: var(--gold); color: var(--midnight); text-decoration: none; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; border: 2px solid var(--gold); transition: all 0.3s; }
 .hero-cta:hover { background: transparent; color: var(--gold); }
@@ -324,6 +350,19 @@ footer { background: var(--midnight); padding: 1.5rem; text-align: center; }
 .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
+/* ── Community Callout Section ── */
+.community-section { background: var(--midnight); padding: 5rem 2rem; text-align: center; position: relative; overflow: hidden; }
+.community-section::before { content:''; position:absolute; inset:0; background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%); pointer-events:none; }
+.community-inner { max-width: 900px; margin: 0 auto; position: relative; z-index: 1; }
+.community-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin: 3rem 0; }
+.community-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2); padding: 2rem 1.5rem; transition: all 0.3s; }
+.community-card:hover { border-color: var(--gold); transform: translateY(-4px); }
+.community-card-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+.community-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--gold); margin-bottom: 0.6rem; font-weight: 600; }
+.community-card-text { font-size: 0.95rem; color: rgba(245,230,200,0.6); line-height: 1.7; }
+.community-cta { display: inline-block; margin-top: 1rem; padding: 1.1rem 3.5rem; background: transparent; border: 2px solid var(--gold); color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; transition: all 0.3s; }
+.community-cta:hover { background: var(--gold); color: var(--midnight); }
+
 @media (max-width: 768px) {
     nav { padding: 0.6rem 1rem; }
     .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(13,13,38,0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; }
@@ -371,13 +410,13 @@ footer { background: var(--midnight); padding: 1.5rem; text-align: center; }
     <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- ════ PAGE 1: HERO ════ -->
+<!-- ════ PAGE 1: HERO — Storm Reflection Photo ════ -->
 
 <div class="hero" id="home">
-    <div class="hero-image-wrapper">
-        <img src="jesus-promise.webp" alt="Jesus reaching out — For I know the plans I have for you, declares the LORD — Jeremiah 29:11 — IBelieveInYou.com">
-    </div>
-    <div class="hero-text">
+    <div class="hero-bg"></div>
+    <div class="hero-god-rays"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
         <div class="hero-tagline">I Believe In You</div>
         <h1 class="hero-main-title">The Truth is simple: <em>God loves you</em> and wants peace in His Kingdom on Earth</h1>
         <a href="#emet" class="hero-cta">Discover the Truth</a>
@@ -567,6 +606,34 @@ footer { background: var(--midnight); padding: 1.5rem; text-align: center; }
         <p class="reveal" style="font-size: 1.15rem; line-height: 2; color: rgba(245,230,200,0.65); margin-top: 2rem;">
             God's kingdom is not a distant place beyond the clouds. It is here, now, in every act of kindness, in every word of truth. When a community believes together &mdash; heaven breaks through.
         </p>
+    </div>
+</section>
+
+<!-- COMMUNITY CALLOUT -->
+
+<section class="community-section" id="community">
+    <div class="community-inner">
+        <span class="section-label">You Are Not Alone</span>
+        <h2 class="section-heading reveal" style="color: #fff;">Join the Community of <em style="color:var(--gold);font-style:italic;">EMET</em></h2>
+        <p class="reveal" style="font-size:1.1rem;color:rgba(245,230,200,0.55);max-width:600px;margin:0 auto 1rem;">A place where testimonies are shared, doubts are welcomed, and truth sets people free — together.</p>
+        <div class="community-grid reveal">
+            <div class="community-card">
+                <span class="community-card-icon">🙏</span>
+                <h3 class="community-card-title">Ask the Word</h3>
+                <p class="community-card-text">Bring your questions, doubts, and struggles. Get scripture-grounded answers.</p>
+            </div>
+            <div class="community-card">
+                <span class="community-card-icon">📖</span>
+                <h3 class="community-card-title">Share Your Testimony</h3>
+                <p class="community-card-text">Your story might be the light someone else needs. Post freely — no account needed.</p>
+            </div>
+            <div class="community-card">
+                <span class="community-card-icon">🕯️</span>
+                <h3 class="community-card-title">Prayer Wall</h3>
+                <p class="community-card-text">Add your prayer request. Let the community stand with you and say Amen.</p>
+            </div>
+        </div>
+        <a href="community.html" class="community-cta reveal">Enter the Community</a>
     </div>
 </section>
 
