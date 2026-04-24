@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community — I Believe In You | EMET</title>
+  <meta name="description" content="A community of faith, testimony, and truth. Ask questions, share your story, pray together."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Lato:wght@400;700;900&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8D5A3;
+      --gold-dim: #a8893a;
+      --navy: #1B2A40;
+      --deep: #0d1b2a;
+      --ink: #08111c;
+      --parchment: #F7F0E3;
+      --glow: rgba(201,168,76,0.18);
+    }
+
+```
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--ink);
+  color: var(--parchment);
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.75;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  background: rgba(8,17,28,0.93);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(201,168,76,0.22);
+  padding: 0 2rem;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.88rem;
+  color: var(--gold);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--gold-light);
+  text-decoration: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  transition: opacity 0.2s, color 0.2s;
+}
+
+.nav-links a:hover { opacity: 1; color: var(--gold); }
+
+.nav-community {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav-cloud-icon {
+  font-size: 1.05rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 6px rgba(255,220,100,0.8));
+  animation: cloudFloat 3s ease-in-out infinite;
+  margin-bottom: 1px;
+}
+
+.nav-rays-svg {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34px;
+  height: 14px;
+  pointer-events: none;
+}
+
+@keyframes cloudFloat {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* ════════════ HERO ════════════ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  padding: 100px 2rem 80px;
+}
+
+.hero-sky {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 120% 80% at 50% 0%, #1a4a7a 0%, #0d2d4f 30%, #08111c 70%),
+    linear-gradient(180deg, #0d2d4f 0%, #08111c 100%);
+  z-index: 0;
+}
+
+.hero-horizon {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 45%;
+  background: linear-gradient(
+    to top,
+    rgba(180,90,20,0.45) 0%,
+    rgba(210,130,30,0.25) 20%,
+    rgba(201,168,76,0.1) 50%,
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-mountains {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 38%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-cloud-wrap {
+  position: absolute;
+  top: 6%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: min(680px, 88vw);
+  pointer-events: none;
+}
+
+.cloud-svg {
+  width: 100%;
+  filter: drop-shadow(0 0 45px rgba(255,210,100,0.38)) drop-shadow(0 0 90px rgba(255,180,50,0.18));
+  animation: cloudDrift 6s ease-in-out infinite;
+}
+
+@keyframes cloudDrift {
+  0%,100% { transform: translateY(0) scale(1); }
+  50%      { transform: translateY(-12px) scale(1.012); }
+}
+
+#raysCanvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 720px;
+  animation: fadeUp 1s 0.3s ease both;
+}
+
+.hero-eyebrow {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 900;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.2rem;
+  text-shadow: 0 0 20px rgba(201,168,76,0.6);
+}
+
+.hero h1 {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 0 30px rgba(255,210,100,0.5), 0 2px 4px rgba(0,0,0,0.8);
+}
+
+.hero h1 em {
+  color: var(--gold);
+  font-style: italic;
+  font-family: 'Crimson Pro', serif;
+}
+
+.hero-verse {
+  font-size: 1.18rem;
+  font-weight: 600;
+  font-style: italic;
+  color: rgba(255,245,220,0.86);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.6);
+}
+
+.hero-ref {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  margin-bottom: 2.5rem;
+  text-shadow: 0 0 12px rgba(201,168,76,0.5);
+}
+
+.hero-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  background: rgba(201,168,76,0.12);
+  border: 1.5px solid rgba(201,168,76,0.4);
+  color: var(--gold-light);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.86rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.72rem 1.6rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.25s;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.tab-btn:hover, .tab-btn.active {
+  background: var(--gold);
+  color: var(--ink);
+  border-color: var(--gold);
+  text-shadow: none;
+  box-shadow: 0 0 22px rgba(201,168,76,0.45);
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem; left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  animation: fadeUp 1s 1.2s ease both;
+}
+
+.scroll-hint span {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(201,168,76,0.4);
+}
+
+.scroll-arrow {
+  width: 1px; height: 30px;
+  background: linear-gradient(to bottom, rgba(201,168,76,0.5), transparent);
+  animation: arrowPulse 2s ease-in-out infinite;
+}
+
+@keyframes arrowPulse {
+  0%,100% { opacity: 0.3; transform: scaleY(1); }
+  50%      { opacity: 0.8; transform: scaleY(1.2); }
+}
+
+/* ════════════ CONTENT ════════════ */
+.section {
+  display: none;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 3.5rem 1.5rem 6rem;
+  position: relative;
+  z-index: 1;
+  animation: fadeUp 0.5s ease both;
+}
+
+.section.active { display: block; }
+
+.section-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.28rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+  text-shadow: 0 0 20px rgba(201,168,76,0.3);
+}
+
+.section-rule {
+  width: 60px; height: 1px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin-bottom: 2.2rem;
+}
+
+.oracle-card {
+  background: linear-gradient(135deg, rgba(27,42,64,0.92) 0%, rgba(13,27,42,0.97) 100%);
+  border: 1px solid rgba(201,168,76,0.28);
+  border-radius: 4px;
+  padding: 2.2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.oracle-label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.9rem;
+}
+
+.suggested-questions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 1.3rem;
+}
+
+.sq-btn {
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.22);
+  color: var(--gold-light);
+  font-family: 'Crimson Pro', serif;
+  font-size: 0.96rem;
+  font-weight: 600;
+  font-style: italic;
+  padding: 0.4rem 1rem;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sq-btn:hover { background: rgba(201,168,76,0.18); border-color: var(--gold); }
+
+.ask-row { display: flex; gap: 0.75rem; align-items: stretch; }
+
+textarea, input[type="text"] {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 2px;
+  color: var(--parchment);
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.06rem;
+  font-weight: 600;
+  padding: 0.8rem 1.1rem;
+  width: 100%;
+  resize: none;
+  transition: border-color 0.2s;
+  outline: none;
+}
+
+textarea:focus, input[type="text"]:focus { border-color: var(--gold); }
+textarea::placeholder, input::placeholder { color: rgba(232,213,163,0.32); font-style:italic; font-weight:400; }
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--ink);
+  border: none;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.82rem 1.5rem;
+  border-radius: 2px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+  flex-shrink: 0;
+}
+
+.btn-gold:hover { background: var(--gold-light); box-shadow: 0 0 18px rgba(201,168,76,0.4); }
+.btn-gold:active { transform: scale(0.98); }
+.btn-gold:disabled { background: rgba(201,168,76,0.3); cursor:not-allowed; }
+
+.oracle-response {
+  margin-top: 1.6rem;
+  padding: 1.6rem;
+  background: rgba(201,168,76,0.06);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 4px 4px 0;
+  display: none;
+  animation: fadeUp 0.4s ease both;
+}
+
+.oracle-response.visible { display: block; }
+
+.oracle-response p {
+  color: var(--parchment);
+  font-size: 1.06rem;
+  font-weight: 600;
+  line-height: 1.88;
+  margin-bottom: 0.9rem;
+}
+
+.oracle-response p:last-child { margin-bottom: 0; }
+
+.scripture-ref { color: var(--gold); font-style:italic; font-weight:600; font-size:1rem; }
+
+.typing-dots { display:inline-flex; gap:5px; align-items:center; }
+.typing-dots span { width:7px;height:7px;background:var(--gold);border-radius:50%;animation:dot-bounce 1.2s infinite ease-in-out; }
+.typing-dots span:nth-child(2){animation-delay:0.2s}
+.typing-dots span:nth-child(3){animation-delay:0.4s}
+@keyframes dot-bounce{0%,80%,100%{transform:translateY(0);opacity:.4}40%{transform:translateY(-7px);opacity:1}}
+
+.post-form {
+  background: linear-gradient(135deg, rgba(27,42,64,0.92), rgba(13,27,42,0.97));
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 4px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.form-row { display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:0.8rem; }
+.form-group { display:flex;flex-direction:column;gap:0.35rem; }
+.form-group label { font-family:'Lato',sans-serif;font-size:0.76rem;font-weight:900;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);opacity:.85; }
+
+.topic-select {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 2px;
+  color: var(--parchment);
+  font-family: 'Crimson Pro', serif;
+  font-size: 1.06rem;
+  font-weight: 600;
+  padding: 0.8rem 1.1rem;
+  outline: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.topic-select option { background: var(--navy); }
+
+.submit-row { display:flex;justify-content:space-between;align-items:center;margin-top:1.1rem;gap:1rem; }
+.char-count { font-family:'Lato',sans-serif;font-size:0.76rem;font-weight:700;color:rgba(201,168,76,0.4); }
+
+.posts-header { display:flex;align-items:center;justify-content:space-between;margin-bottom:1.6rem;flex-wrap:wrap;gap:0.6rem; }
+.posts-count { font-family:'Lato',sans-serif;font-size:0.76rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:rgba(201,168,76,0.5); }
+.filter-pills { display:flex;gap:0.4rem;flex-wrap:wrap; }
+
+.pill {
+  background: rgba(201,168,76,0.08);
+  border: 1px solid rgba(201,168,76,0.2);
+  color: rgba(232,213,163,0.6);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pill:hover, .pill.active { background:rgba(201,168,76,0.2);border-color:var(--gold);color:var(--gold); }
+
+.post-card {
+  background: linear-gradient(135deg, rgba(27,42,64,0.72), rgba(13,27,42,0.82));
+  border: 1px solid rgba(201,168,76,0.15);
+  border-radius: 4px;
+  padding: 1.6rem;
+  margin-bottom: 1.1rem;
+  transition: border-color 0.2s;
+  animation: fadeUp 0.4s ease both;
+}
+
+.post-card:hover { border-color: rgba(201,168,76,0.32); }
+.post-meta { display:flex;align-items:center;gap:0.85rem;margin-bottom:0.85rem;flex-wrap:wrap; }
+
+.post-avatar {
+  width:38px;height:38px;border-radius:50%;
+  background:linear-gradient(135deg,var(--navy),var(--deep));
+  border:1px solid rgba(201,168,76,0.3);
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cinzel Decorative',serif;font-size:0.78rem;font-weight:700;color:var(--gold);flex-shrink:0;
+}
+
+.post-author { font-family:'Lato',sans-serif;font-weight:900;font-size:0.9rem;color:var(--gold-light); }
+
+.post-topic-badge { font-family:'Lato',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:.18rem .65rem;border-radius:2px;border:1px solid; }
+.badge-testimony{border-color:#C9A84C;color:#C9A84C;background:rgba(201,168,76,.08)}
+.badge-prayer   {border-color:#7a9cc4;color:#7a9cc4;background:rgba(122,156,196,.08)}
+.badge-doubt    {border-color:#a07840;color:#a07840;background:rgba(160,120,64,.08)}
+.badge-revival  {border-color:#8B3A3A;color:#c96060;background:rgba(139,58,58,.08)}
+.badge-scripture{border-color:#5a8a5a;color:#7ab87a;background:rgba(90,138,90,.08)}
+
+.post-time { font-family:'Lato',sans-serif;font-size:0.74rem;font-weight:700;color:rgba(201,168,76,0.3);margin-left:auto; }
+.post-body { color:var(--parchment);font-size:1.06rem;font-weight:600;line-height:1.82;margin-bottom:1rem; }
+.post-actions { display:flex;gap:1rem;align-items:center; }
+
+.action-btn {
+  background:none;border:none;color:rgba(201,168,76,0.4);
+  font-family:'Lato',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:.08em;
+  cursor:pointer;display:flex;align-items:center;gap:0.35rem;transition:color 0.2s;padding:0;
+}
+
+.action-btn:hover{color:var(--gold)} .action-btn.liked{color:var(--gold)}
+
+.prayer-card {
+  background: linear-gradient(135deg, rgba(27,42,64,0.65), rgba(13,27,42,0.78));
+  border: 1px solid rgba(122,156,196,0.22);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 1.1rem;
+  position: relative;
+  animation: fadeUp 0.4s ease both;
+}
+
+.prayer-flame { position:absolute;top:1rem;right:1.2rem;font-size:1.2rem;opacity:.65; }
+.prayer-body { font-style:italic;font-weight:600;color:rgba(232,213,163,.88);font-size:1.08rem;line-height:1.82;margin-bottom:.85rem; }
+.prayer-meta { display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem; }
+.praying-count { font-family:'Lato',sans-serif;font-size:0.76rem;font-weight:700;color:rgba(122,156,196,.72);letter-spacing:.05em; }
+
+.btn-pray {
+  background:rgba(122,156,196,.12);border:1px solid rgba(122,156,196,.3);color:#7a9cc4;
+  font-family:'Lato',sans-serif;font-size:0.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  padding:.38rem 1rem;border-radius:2px;cursor:pointer;transition:all .2s;
+}
+
+.btn-pray:hover,.btn-pray.praying{background:rgba(122,156,196,.25);border-color:#7a9cc4;}
+
+.gold-divider{display:flex;align-items:center;gap:1rem;margin:2.2rem 0;}
+.gold-divider::before,.gold-divider::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,168,76,.3),transparent);}
+.gold-divider-text{font-family:'Cinzel Decorative',serif;font-size:0.76rem;font-weight:700;color:var(--gold);opacity:.65;letter-spacing:.18em;}
+
+.page-footer { text-align:center;padding:3rem 1.5rem;border-top:1px solid rgba(201,168,76,.12);position:relative;z-index:1; }
+.page-footer a{color:rgba(201,168,76,.55);text-decoration:none;font-family:'Lato',sans-serif;font-size:0.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin:0 1rem;transition:color .2s;}
+.page-footer a:hover{color:var(--gold)}
+.footer-emet{font-family:'Cinzel Decorative',serif;font-size:1.5rem;font-weight:700;color:rgba(201,168,76,.14);margin-top:1.5rem;letter-spacing:.35em;}
+
+.toast{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%) translateY(80px);background:var(--navy);border:1px solid var(--gold);color:var(--gold-light);font-family:'Lato',sans-serif;font-size:0.9rem;font-weight:700;padding:.8rem 1.6rem;border-radius:2px;z-index:999;transition:transform .3s ease;white-space:nowrap;}
+.toast.show{transform:translateX(-50%) translateY(0)}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:600px){
+  .nav-links{display:none}
+  .form-row{grid-template-columns:1fr}
+  .ask-row{flex-direction:column}
+  .hero h1{font-size:1.72rem}
+  .btn-gold{width:100%}
+}
+```
+
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <a href="index.html" class="nav-brand">I Believe In You</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#emet">EMET</a></li>
+    <li><a href="index.html#pray">Pray</a></li>
+    <li>
+      <!-- Cloud + rays above Community link -->
+      <div class="nav-community">
+        <span class="nav-cloud-icon">☁️</span>
+        <svg class="nav-rays-svg" viewBox="0 0 34 14" xmlns="http://www.w3.org/2000/svg">
+          <line x1="17" y1="0" x2="3"  y2="14" stroke="rgba(255,215,80,0.5)"  stroke-width="1"/>
+          <line x1="17" y1="0" x2="9"  y2="14" stroke="rgba(255,215,80,0.7)"  stroke-width="1"/>
+          <line x1="17" y1="0" x2="17" y2="14" stroke="rgba(255,215,80,0.9)"  stroke-width="1.5"/>
+          <line x1="17" y1="0" x2="25" y2="14" stroke="rgba(255,215,80,0.7)"  stroke-width="1"/>
+          <line x1="17" y1="0" x2="31" y2="14" stroke="rgba(255,215,80,0.5)"  stroke-width="1"/>
+        </svg>
+        <a href="community.html" style="color:var(--gold);opacity:1;margin-top:2px;">Community</a>
+      </div>
+    </li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<div class="hero">
+  <div class="hero-sky"></div>
+  <div class="hero-horizon"></div>
+
+<canvas id="raysCanvas"></canvas>
+
+  <!-- Mountain silhouettes -->
+
+  <svg class="hero-mountains" viewBox="0 0 1440 300" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 300 L0 200 L80 160 L160 190 L260 120 L380 155 L480 90 L580 130 L680 70 L780 110 L880 80 L980 115 L1080 60 L1180 100 L1280 75 L1360 110 L1440 85 L1440 300 Z" fill="rgba(20,45,70,0.6)"/>
+    <path d="M0 300 L0 240 L120 195 L240 220 L340 170 L440 200 L520 155 L620 180 L700 135 L800 165 L900 140 L1000 170 L1100 130 L1200 160 L1300 145 L1380 170 L1440 155 L1440 300 Z" fill="rgba(10,25,40,0.85)"/>
+    <path d="M0 300 L0 270 L80 255 L160 265 L220 248 L300 260 L380 245 L440 258 L520 242 L600 255 L680 240 L760 252 L840 238 L920 250 L1000 235 L1080 248 L1160 234 L1240 246 L1320 232 L1440 245 L1440 300 Z" fill="rgba(6,16,28,0.95)"/>
+  </svg>
+
+  <!-- Animated divine cloud -->
+
+  <div class="hero-cloud-wrap">
+    <svg class="cloud-svg" viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="cloudGlow" cx="50%" cy="28%" r="60%">
+          <stop offset="0%"   stop-color="#fff8e0" stop-opacity="1"/>
+          <stop offset="25%"  stop-color="#ffd060" stop-opacity="0.95"/>
+          <stop offset="55%"  stop-color="#e08030" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="#1a3a5a" stop-opacity="0.3"/>
+        </radialGradient>
+        <linearGradient id="cloudBody" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#c8dff0" stop-opacity="0.88"/>
+          <stop offset="45%"  stop-color="#7aa0c0" stop-opacity="0.76"/>
+          <stop offset="100%" stop-color="#254060" stop-opacity="0.6"/>
+        </linearGradient>
+        <filter id="cfBlur"><feGaussianBlur stdDeviation="2.5"/></filter>
+      </defs>
+      <!-- Outer atmospheric halo -->
+      <ellipse cx="350" cy="125" rx="310" ry="115" fill="rgba(255,195,70,0.07)" filter="url(#cfBlur)"/>
+      <!-- Dark storm body -->
+      <path d="M115 238 Q88 218 97 188 Q76 177 82 152 Q66 137 86 117 Q81 92 107 82 Q103 57 128 47 Q148 28 178 38 Q188 18 218 16 Q248 3 278 13 Q298 -2 333 6 Q363 -4 393 8 Q418 3 443 18 Q473 13 493 33 Q518 28 533 48 Q558 43 563 68 Q588 63 593 88 Q613 86 610 113 Q628 118 618 143 Q633 148 623 173 Q633 183 618 198 Q623 218 603 228 Q578 248 115 238 Z" fill="url(#cloudBody)"/>
+      <!-- Sunlit billowing tops -->
+      <path d="M198 128 Q182 92 202 67 Q218 43 248 48 Q268 28 298 33 Q318 13 353 20 Q383 8 408 26 Q433 16 453 38 Q476 33 483 58 Q503 53 502 83 Q518 93 507 118 Q488 123 198 128 Z" fill="url(#cloudGlow)"/>
+      <!-- Bright crown -->
+      <path d="M248 78 Q238 52 258 40 Q278 23 308 30 Q328 16 353 23 Q376 13 398 30 Q418 20 430 43 Q446 38 446 63 Q432 72 248 78 Z" fill="rgba(255,252,225,0.94)"/>
+      <!-- Brilliant apex highlight -->
+      <path d="M298 53 Q293 36 313 26 Q333 16 353 23 Q370 16 384 30 Q394 26 399 43 Q383 50 298 53 Z" fill="rgba(255,255,248,1)"/>
+    </svg>
+  </div>
+
+  <!-- Text content -->
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">✦ &nbsp; Community &nbsp; · &nbsp; Truth &nbsp; · &nbsp; Revival &nbsp; ✦</div>
+    <h1>Gather in the <em>Light</em><br>of His Truth</h1>
+    <p class="hero-verse">"Where two or three gather in my name,<br>there am I with them."</p>
+    <p class="hero-ref">— Matthew 18:20</p>
+    <div class="hero-tabs">
+      <button class="tab-btn active" onclick="showTab('oracle')">🕊 Ask the Word</button>
+      <button class="tab-btn" onclick="showTab('testimony')">📖 Testimonies</button>
+      <button class="tab-btn" onclick="showTab('prayer')">🙏 Prayer Wall</button>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</div>
+
+<!-- ORACLE -->
+
+<div id="sec-oracle" class="section active">
+  <div class="section-title">Ask the Word</div>
+  <div class="section-rule"></div>
+  <div class="oracle-card">
+    <div class="oracle-label">✦ &nbsp; Seek and you shall find — Matthew 7:7</div>
+    <p style="font-style:italic;font-weight:600;color:rgba(232,213,163,.65);font-size:1rem;margin-bottom:1.1rem;">Ask any question about faith, scripture, doubt, or God's love. Every answer is grounded in truth.</p>
+    <div class="suggested-questions">
+      <button class="sq-btn" onclick="fillQuestion(this)">Why does God allow suffering?</button>
+      <button class="sq-btn" onclick="fillQuestion(this)">How do I forgive someone who hurt me?</button>
+      <button class="sq-btn" onclick="fillQuestion(this)">What does EMET mean spiritually?</button>
+      <button class="sq-btn" onclick="fillQuestion(this)">I feel far from God — what do I do?</button>
+      <button class="sq-btn" onclick="fillQuestion(this)">How do I know God hears my prayers?</button>
+    </div>
+    <div class="ask-row">
+      <textarea id="questionInput" rows="3" placeholder="Ask your question in faith…"></textarea>
+      <button class="btn-gold" id="askBtn" onclick="askOracle()">Ask</button>
+    </div>
+    <div class="oracle-response" id="oracleResponse">
+      <div id="oracleContent"></div>
+    </div>
+  </div>
+  <div class="gold-divider"><span class="gold-divider-text">אמת</span></div>
+  <p style="text-align:center;font-style:italic;font-weight:600;color:rgba(232,213,163,.45);font-size:1rem;">"For the word of God is alive and active, sharper than any double-edged sword." — Hebrews 4:12</p>
+</div>
+
+<!-- TESTIMONIES -->
+
+<div id="sec-testimony" class="section">
+  <div class="section-title">Testimonies & Discussion</div>
+  <div class="section-rule"></div>
+  <div class="post-form">
+    <div class="oracle-label" style="margin-bottom:1.1rem;">✦ &nbsp; Share Your Story</div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Your Name</label>
+        <input type="text" id="postName" placeholder="First name or anonymous"/>
+      </div>
+      <div class="form-group">
+        <label>Topic</label>
+        <select class="topic-select" id="postTopic">
+          <option value="testimony">Testimony</option>
+          <option value="doubt">Doubt &amp; Questions</option>
+          <option value="revival">Revival</option>
+          <option value="scripture">Scripture</option>
+          <option value="prayer">Prayer Request</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group" style="margin-bottom:.8rem;">
+      <label>Your Message</label>
+      <textarea id="postBody" rows="4" placeholder="Share what God has done in your life, or a question on your heart…" oninput="updateCharCount()"></textarea>
+    </div>
+    <div class="submit-row">
+      <span class="char-count" id="charCount">0 / 800</span>
+      <button class="btn-gold" onclick="submitPost()">Share with the Community</button>
+    </div>
+  </div>
+  <div class="posts-header">
+    <span class="posts-count" id="postsCount">Loading testimonies…</span>
+    <div class="filter-pills">
+      <button class="pill active" onclick="filterPosts('all',this)">All</button>
+      <button class="pill" onclick="filterPosts('testimony',this)">Testimony</button>
+      <button class="pill" onclick="filterPosts('prayer',this)">Prayer</button>
+      <button class="pill" onclick="filterPosts('doubt',this)">Doubt</button>
+      <button class="pill" onclick="filterPosts('revival',this)">Revival</button>
+      <button class="pill" onclick="filterPosts('scripture',this)">Scripture</button>
+    </div>
+  </div>
+  <div id="postsContainer"></div>
+</div>
+
+<!-- PRAYER WALL -->
+
+<div id="sec-prayer" class="section">
+  <div class="section-title">Prayer Wall</div>
+  <div class="section-rule"></div>
+  <div class="post-form" style="margin-bottom:2rem;">
+    <div class="oracle-label" style="margin-bottom:1.1rem;">✦ &nbsp; Leave Your Prayer Request</div>
+    <div class="form-group" style="margin-bottom:.8rem;">
+      <label>Your Name (optional)</label>
+      <input type="text" id="prayerName" placeholder="Anonymous"/>
+    </div>
+    <div class="form-group" style="margin-bottom:.8rem;">
+      <label>Your Prayer Request</label>
+      <textarea id="prayerBody" rows="3" placeholder="What is on your heart? The community will pray with you…"></textarea>
+    </div>
+    <div style="text-align:right;margin-top:.8rem;">
+      <button class="btn-gold" onclick="submitPrayer()">Add to the Wall</button>
+    </div>
+  </div>
+  <div id="prayerContainer"></div>
+</div>
+
+<footer class="page-footer">
+  <a href="index.html">Home</a>
+  <a href="index.html#emet">EMET</a>
+  <a href="index.html#pray">Pray</a>
+  <a href="community.html">Community</a>
+  <div class="footer-emet">אמת</div>
+  <p style="font-family:'Lato',sans-serif;font-size:0.76rem;font-weight:700;color:rgba(201,168,76,.2);margin-top:.8rem;letter-spacing:.12em;">© 2026 I BELIEVE IN YOU — ALL RIGHTS RESERVED</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<!-- LIGHT RAYS + STAR FIELD -->
+
+<script>
+(function(){
+  const canvas = document.getElementById('raysCanvas');
+  const ctx    = canvas.getContext('2d');
+  let W, H, rays, stars;
+
+  function resize(){
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+    initRays(); initStars();
+  }
+
+  function initRays(){
+    rays = [];
+    const cx = W * 0.50, cy = H * 0.20;
+    const count = 20;
+    for(let i=0;i<count;i++){
+      const angle = (Math.PI * 0.52) + (i/(count-1))*(Math.PI * 0.96);
+      rays.push({
+        angle, cx, cy,
+        len   : H * (0.55 + Math.random() * 0.45),
+        width : 1.8 + Math.random() * 4,
+        speed : 0.003 + Math.random() * 0.006,
+        phase : Math.random() * Math.PI * 2
+      });
+    }
+  }
+
+  function initStars(){
+    stars = [];
+    for(let i=0;i<140;i++){
+      stars.push({
+        x: Math.random()*W, y: Math.random()*H*0.52,
+        r: 0.4+Math.random()*1.3,
+        phase: Math.random()*Math.PI*2,
+        speed: 0.005+Math.random()*0.012
+      });
+    }
+  }
+
+  let t=0;
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+
+    // Stars
+    stars.forEach(s=>{
+      const a = 0.12 + 0.42*(0.5+0.5*Math.sin(t*s.speed+s.phase));
+      ctx.beginPath();
+      ctx.arc(s.x,s.y,s.r,0,Math.PI*2);
+      ctx.fillStyle = `rgba(255,248,220,${a.toFixed(3)})`;
+      ctx.fill();
+    });
+
+    // Rays
+    rays.forEach(ray=>{
+      const pulse = 0.5 + 0.5*Math.sin(t*ray.speed + ray.phase);
+      const a     = (0.04 + 0.13*pulse).toFixed(3);
+      const endX  = ray.cx + Math.cos(ray.angle)*ray.len;
+      const endY  = ray.cy + Math.sin(ray.angle)*ray.len;
+
+      const grad = ctx.createLinearGradient(ray.cx,ray.cy,endX,endY);
+      grad.addColorStop(0,   `rgba(255,235,120,${a})`);
+      grad.addColorStop(0.3, `rgba(255,205,80,${(a*.7).toFixed(3)})`);
+      grad.addColorStop(1,   'rgba(200,150,50,0)');
+
+      const spread = ray.width * 14;
+      const px = -Math.sin(ray.angle)*spread;
+      const py =  Math.cos(ray.angle)*spread;
+
+      ctx.beginPath();
+      ctx.moveTo(ray.cx,ray.cy);
+      ctx.lineTo(endX+px,endY+py);
+      ctx.lineTo(endX-px,endY-py);
+      ctx.closePath();
+      ctx.fillStyle = grad;
+      ctx.fill();
+    });
+
+    t++;
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize',resize);
+  resize(); draw();
+})();
+</script>
+
+<!-- COMMUNITY LOGIC -->
+
+<script>
+  let posts=[
+    {id:1,name:"Martha K.",  topic:"testimony",time:"2 hours ago",body:"Three years ago I walked into a church broken, homeless, and without hope. Today I'm standing in faith knowing God never left me. EMET — the truth held me when nothing else did.",likes:14,liked:false},
+    {id:2,name:"David R.",   topic:"doubt",    time:"5 hours ago",body:"I'll be honest — I've been struggling with doubt lately. Life hasn't gone the way I prayed. But I keep coming back to this: God's ways are higher than mine. Still working through it.",likes:8,liked:false},
+    {id:3,name:"Anonymous",  topic:"revival",  time:"yesterday",body:"I felt the Spirit move at our prayer group last Tuesday. Three people gave their lives to Christ. This is what revival looks like — one heart at a time, in living rooms and parking lots.",likes:22,liked:false},
+    {id:4,name:"Sarah M.",   topic:"scripture",time:"yesterday",body:"Been meditating on Jeremiah 29:11 all week. 'For I know the plans I have for you.' Not your pastor's plans. Not your family's plans. HIS plans. That hit me different this morning.",likes:17,liked:false}
+  ];
+
+  let prayers=[
+    {id:1,name:"Anonymous",        body:"Please pray for my mother who is in the hospital. She doesn't know the Lord yet. I believe this is her moment.",count:31,praying:false},
+    {id:2,name:"James T.",         body:"I'm asking for prayer over my marriage. We are fighting every day and I don't know how to fix it. I know God can restore what feels broken.",count:19,praying:false},
+    {id:3,name:"A Broken Believer",body:"I need prayer for faith to return. I went through loss and feel like God is silent. Just need to know He's there.",count:47,praying:false}
+  ];
+
+  let currentFilter='all', nextPostId=5, nextPrayerId=4;
+
+  function showTab(tab){
+    document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.getElementById('sec-'+tab).classList.add('active');
+    const map={oracle:0,testimony:1,prayer:2};
+    const btns=document.querySelectorAll('.tab-btn');
+    if(btns[map[tab]])btns[map[tab]].classList.add('active');
+    if(tab==='testimony')renderPosts();
+    if(tab==='prayer')renderPrayers();
+    window.scrollTo({top:document.querySelector('.hero').offsetHeight,behavior:'smooth'});
+  }
+
+  function fillQuestion(btn){ document.getElementById('questionInput').value=btn.textContent; }
+
+  async function askOracle(){
+    const q=document.getElementById('questionInput').value.trim();
+    if(!q)return;
+    const btn=document.getElementById('askBtn');
+    const resp=document.getElementById('oracleResponse');
+    const cont=document.getElementById('oracleContent');
+    btn.disabled=true; btn.textContent='…';
+    resp.classList.add('visible');
+    cont.innerHTML='<div class="typing-dots"><span></span><span></span><span></span></div>';
+    try{
+      const res=await fetch("https://api.anthropic.com/v1/messages",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({
+          model:"claude-sonnet-4-20250514",
+          max_tokens:1000,
+          system:`You are a compassionate, scripture-grounded faith guide for a community called "I Believe In You" (webelievenyou.com). Answer questions about faith, God, Jesus, scripture, doubt, and spiritual life with warmth, truth, and grace. Ground every answer in scripture. Be personal and human — not preachy or robotic. Speak as if to a friend sitting across from you. Use plain language. End with one relevant scripture reference formatted as: *"Quote…" — Book Chapter:Verse*. Keep responses to 3-4 paragraphs maximum.`,
+          messages:[{role:"user",content:q}]
+        })
+      });
+      const data=await res.json();
+      const text=data.content?.[0]?.text||"Unable to retrieve an answer. Please try again.";
+      const formatted=text.split('\n\n').filter(p=>p.trim()).map(p=>{
+        p=p.replace(/\*"([^"]+)"\s*—\s*([^*\n]+)\*/g,'<span class="scripture-ref">"$1" — $2</span>');
+        p=p.replace(/\*([^*]+)\*/g,'<em>$1</em>');
+        return`<p>${p}</p>`;
+      }).join('');
+      cont.innerHTML=formatted;
+    }catch(e){
+      cont.innerHTML='<p style="color:rgba(232,213,163,.5);">Unable to reach the server. Please check your connection and try again.</p>';
+    }
+    btn.disabled=false; btn.textContent='Ask';
+  }
+
+  document.getElementById('questionInput').addEventListener('keydown',function(e){
+    if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();askOracle();}
+  });
+
+  function topicBadge(t){
+    const m={testimony:'Testimony',prayer:'Prayer',doubt:'Doubt & Questions',revival:'Revival',scripture:'Scripture'};
+    return`<span class="post-topic-badge badge-${t}">${m[t]||t}</span>`;
+  }
+
+  function initials(n){
+    if(!n||n==='Anonymous')return'?';
+    return n.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);
+  }
+
+  function renderPosts(){
+    const c=document.getElementById('postsContainer');
+    const f=currentFilter==='all'?posts:posts.filter(p=>p.topic===currentFilter);
+    document.getElementById('postsCount').textContent=`${f.length} ${f.length===1?'voice':'voices'} sharing`;
+    if(!f.length){c.innerHTML='<p style="text-align:center;color:rgba(201,168,76,.35);font-style:italic;padding:2rem 0;font-weight:600;">No posts yet in this topic. Be the first to share.</p>';return;}
+    c.innerHTML=f.map(p=>`
+      <div class="post-card" id="post-${p.id}">
+        <div class="post-meta">
+          <div class="post-avatar">${initials(p.name)}</div>
+          <span class="post-author">${p.name}</span>
+          ${topicBadge(p.topic)}
+          <span class="post-time">${p.time}</span>
+        </div>
+        <div class="post-body">${p.body}</div>
+        <div class="post-actions">
+          <button class="action-btn ${p.liked?'liked':''}" onclick="likePost(${p.id})">
+            ♥ <span id="likes-${p.id}">${p.likes}</span> Amen
+          </button>
+        </div>
+      </div>`).join('');
+  }
+
+  function filterPosts(topic,el){
+    currentFilter=topic;
+    document.querySelectorAll('.filter-pills .pill').forEach(p=>p.classList.remove('active'));
+    el.classList.add('active');
+    renderPosts();
+  }
+
+  function likePost(id){
+    const p=posts.find(x=>x.id===id);
+    if(!p)return;
+    p.liked=!p.liked; p.likes+=p.liked?1:-1;
+    const btn=document.querySelector(`#post-${id} .action-btn`);
+    const cnt=document.getElementById(`likes-${id}`);
+    if(btn)btn.classList.toggle('liked',p.liked);
+    if(cnt)cnt.textContent=p.likes;
+  }
+
+  function updateCharCount(){
+    const v=document.getElementById('postBody').value;
+    document.getElementById('charCount').textContent=`${v.length} / 800`;
+  }
+
+  function submitPost(){
+    const name=document.getElementById('postName').value.trim()||'Anonymous';
+    const topic=document.getElementById('postTopic').value;
+    const body=document.getElementById('postBody').value.trim();
+    if(!body){showToast('Please write something before sharing.');return;}
+    if(body.length>800){showToast('Please keep your message under 800 characters.');return;}
+    posts.unshift({id:nextPostId++,name,topic,time:'just now',body,likes:0,liked:false});
+    document.getElementById('postName').value='';
+    document.getElementById('postBody').value='';
+    document.getElementById('charCount').textContent='0 / 800';
+    renderPosts();
+    showToast('🙏 Your testimony has been shared. Thank you.');
+  }
+
+  function renderPrayers(){
+    document.getElementById('prayerContainer').innerHTML=prayers.map(p=>`
+      <div class="prayer-card">
+        <div class="prayer-flame">🕯</div>
+        <div class="prayer-body">"${p.body}"</div>
+        <div class="prayer-meta">
+          <span class="praying-count" id="pcount-${p.id}">🙏 ${p.count} ${p.count===1?'person':'people'} praying</span>
+          <button class="btn-pray ${p.praying?'praying':''}" onclick="prayFor(${p.id})">${p.praying?"✓ I'm Praying":"I'll Pray"}</button>
+        </div>
+      </div>`).join('');
+  }
+
+  function prayFor(id){
+    const p=prayers.find(x=>x.id===id);
+    if(!p)return;
+    p.praying=!p.praying; p.count+=p.praying?1:-1;
+    renderPrayers();
+    if(p.praying)showToast('🙏 Your prayer has been added.');
+  }
+
+  function submitPrayer(){
+    const name=document.getElementById('prayerName').value.trim()||'Anonymous';
+    const body=document.getElementById('prayerBody').value.trim();
+    if(!body){showToast('Please write your prayer request first.');return;}
+    prayers.unshift({id:nextPrayerId++,name,body,count:1,praying:true});
+    document.getElementById('prayerName').value='';
+    document.getElementById('prayerBody').value='';
+    renderPrayers();
+    showToast('🙏 Your prayer has been added to the wall.');
+  }
+
+  function showToast(msg){
+    const t=document.getElementById('toast');
+    t.textContent=msg; t.classList.add('show');
+    setTimeout(()=>t.classList.remove('show'),3000);
+  }
+
+  renderPosts(); renderPrayers();
+</script>
+
+</body>
+</html>
