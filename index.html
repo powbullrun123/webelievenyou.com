@@ -2,479 +2,588 @@
 
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Community — I Believe In You | EMET</title>
-  <meta name="description" content="A community of faith, testimony, and truth. Ask questions, share your story, pray together.">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Hebrew:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --gold: #C9A84C; --gold-light: #E8D48B; --gold-dark: #8B6914;
-      --cream: #FAF6ED; --deep-blue: #1A1A3E; --midnight: #0D0D26;
-      --parchment: #F5E6C8; --text-dark: #2C2414; --text-light: #F5E6C8;
+    <link rel="icon" type="image/png" href="cross-truth.png">
+    <link rel="apple-touch-icon" href="cross-truth.png">
+<meta name="msapplication-TileImage" content="cross-truth.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Believe In You — אמת EMET: The Truth Shall Set You Free</title>
+    <meta name="description" content="Discover EMET — the Hebrew word for Truth. God loves us all and wants peace in His kingdom on earth.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+Hebrew:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #C9A84C; --gold-light: #E8D48B; --gold-dark: #8B6914;
+            --cream: #FAF6ED; --deep-blue: #1A1A3E; --midnight: #0D0D26;
+            --warm-white: #FFF9F0; --rose: #C46B6B; --parchment: #F5E6C8;
+            --text-dark: #2C2414; --text-light: #F5E6C8;
+        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Lora', Georgia, serif; color: var(--text-dark); background: var(--midnight); overflow-x: hidden; line-height: 1.7; }
+
+```
+    /* ═══ NAV ═══ */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0.8rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(13,13,38,0.92); backdrop-filter: blur(10px); }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: var(--gold); text-decoration: none; }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a { color: var(--gold-light); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s; }
+    .nav-links a:hover { color: #fff; }
+    .mobile-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .mobile-toggle span { width: 26px; height: 2px; background: var(--gold-light); }
+
+    /* ════ HERO ════ */
+    .hero { background: var(--midnight); padding-top: 50px; }
+    .hero-image-wrapper { width: 100%; }
+    .hero-image-wrapper img { width: 100%; height: auto; display: block; }
+    .hero-text { background: var(--midnight); text-align: center; padding: 3rem 2rem 4rem; }
+    .hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.4em; text-transform: uppercase; margin-bottom: 1.2rem; }
+    .hero-main-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.4rem, 5.5vw, 4.2rem); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 2rem; max-width: 900px; margin-left: auto; margin-right: auto; }
+    .hero-main-title em { font-style: italic; color: var(--gold); }
+    .hero-cta { display: inline-block; padding: 1.2rem 4rem; background: var(--gold); color: var(--midnight); text-decoration: none; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; border: 2px solid var(--gold); transition: all 0.3s; }
+    .hero-cta:hover { background: transparent; color: var(--gold); }
+
+    /* ════════════════════════════════════════════════ */
+    /* MUSIC PLAYER SECTION                            */
+    /* ════════════════════════════════════════════════ */
+    .music-section {
+        background: linear-gradient(180deg, var(--midnight) 0%, #0a0a1f 40%, var(--midnight) 100%);
+        padding: 5rem 2rem 6rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
     }
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Lora', Georgia, serif; background: var(--midnight); color: var(--text-light); overflow-x: hidden; line-height: 1.7; }
+    /* Subtle decorative glow behind the player */
+    .music-section::before {
+        content: '';
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: 600px; height: 300px;
+        background: radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 70%);
+        pointer-events: none;
+    }
+    .music-inner {
+        max-width: 780px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+    .music-label {
+        font-family: 'Lora', serif;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.35em;
+        color: var(--gold);
+        margin-bottom: 0.8rem;
+    }
+    .music-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(2rem, 4.5vw, 3.2rem);
+        font-weight: 300;
+        color: #fff;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+    }
+    .music-title em {
+        font-style: italic;
+        color: var(--gold);
+    }
+    .music-artist {
+        font-family: 'Lora', serif;
+        font-size: 1rem;
+        color: rgba(245,230,200,0.45);
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+    }
 
+    /* Gold border frame around the YouTube player */
+    .player-frame {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        max-width: 680px;
+    }
+    /* Decorative corner accents */
+    .player-frame::before,
+    .player-frame::after {
+        content: '';
+        position: absolute;
+        width: 28px; height: 28px;
+        border-color: var(--gold);
+        border-style: solid;
+        z-index: 2;
+    }
+    .player-frame::before { top: -6px; left: -6px; border-width: 3px 0 0 3px; }
+    .player-frame::after  { bottom: -6px; right: -6px; border-width: 0 3px 3px 0; }
+    .player-frame-inner {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 */
+        overflow: hidden;
+        border: 1px solid rgba(201,168,76,0.25);
+        box-shadow: 0 20px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(201,168,76,0.08);
+    }
+    .player-frame-inner iframe {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        border: none;
+    }
+
+    /* Corner accent squares (opposite corners) */
+    .player-corner-tl,
+    .player-corner-br {
+        position: absolute;
+        width: 28px; height: 28px;
+        border-color: var(--gold);
+        border-style: solid;
+        z-index: 2;
+    }
+    .player-corner-tl { top: -6px; right: -6px; border-width: 3px 3px 0 0; }
+    .player-corner-br { bottom: -6px; left: -6px; border-width: 0 0 3px 3px; }
+
+    .music-quote {
+        margin: 2.5rem auto 0;
+        max-width: 520px;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+        font-style: italic;
+        font-weight: 300;
+        color: rgba(245,230,200,0.55);
+        line-height: 1.6;
+    }
+    .music-quote span {
+        display: block;
+        font-family: 'Lora', serif;
+        font-style: normal;
+        font-size: 0.78rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-top: 0.8rem;
+        opacity: 0.7;
+    }
+
+    /* Divider between player and EMET section */
+    .gold-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 0 2rem;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .gold-divider::before,
+    .gold-divider::after {
+        content: '';
+        flex: 1;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .gold-divider-star {
+        color: var(--gold);
+        font-size: 0.8rem;
+        opacity: 0.6;
+    }
+
+    /* ════ EMET ════ */
+    .emet-section { background: var(--deep-blue); text-align: center; padding: 6rem 2rem; color: var(--text-light); }
+    .emet-inner { max-width: 1000px; margin: 0 auto; }
+    .emet-hero-image { width: 100%; max-width: 950px; margin: 2rem auto 4rem; border: 3px solid var(--gold); overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+    .emet-hero-image img { width: 100%; display: block; }
+
+    /* ═══ 3D SYMBOLIC HEBREW LETTERS ═══ */
+    .emet-letters { display: flex; justify-content: center; gap: clamp(3rem, 8vw, 7rem); margin: 4rem 0 2rem; direction: rtl; }
+    .emet-letter { text-align: center; opacity: 0; transform: translateY(50px) scale(0.85); }
+    .emet-letter.animate { animation: emetReveal 1s cubic-bezier(0.23, 1, 0.32, 1) forwards; }
+    .emet-letter:nth-child(1) { animation-delay: 0.1s; }
+    .emet-letter:nth-child(2) { animation-delay: 0.45s; }
+    .emet-letter:nth-child(3) { animation-delay: 0.8s; }
+    @keyframes emetReveal { to { opacity: 1; transform: translateY(0) scale(1); } }
+
+    .emet-letter .hebrew-char {
+        font-family: 'Noto Sans Hebrew', serif; font-size: clamp(9rem, 20vw, 16rem); font-weight: 700; display: block; line-height: 1; color: var(--gold);
+        text-shadow: 1px 1px 0 #B8922E, 2px 2px 0 #A07A20, 3px 3px 0 #8B6914, 4px 4px 0 #705510, 5px 5px 0 #5A440D, 6px 6px 0 #4A380A, 7px 7px 0 #3A2C08, 8px 8px 15px rgba(0,0,0,0.6), 0 0 40px rgba(201,168,76,0.2), 0 0 80px rgba(201,168,76,0.1);
+        transition: transform 0.3s, text-shadow 0.3s; cursor: default;
+    }
+    .emet-letter:hover .hebrew-char {
+        transform: scale(1.08);
+        text-shadow: 1px 1px 0 #B8922E, 2px 2px 0 #A07A20, 3px 3px 0 #8B6914, 4px 4px 0 #705510, 5px 5px 0 #5A440D, 6px 6px 0 #4A380A, 7px 7px 0 #3A2C08, 8px 8px 15px rgba(0,0,0,0.6), 0 0 60px rgba(201,168,76,0.4), 0 0 120px rgba(201,168,76,0.2);
+    }
+    .emet-letter .letter-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--gold); margin-top: 1rem; font-weight: 600; }
+    .emet-letter .letter-meaning { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--gold-light); margin-top: 0.4rem; font-style: italic; }
+    .emet-letter .letter-detail { font-size: 0.95rem; color: rgba(245,230,200,0.5); margin-top: 0.3rem; }
+
+    .emet-text { font-size: clamp(1.15rem, 2vw, 1.35rem); line-height: 2; color: rgba(245,230,200,0.8); max-width: 720px; margin: 2rem auto; }
+
+    /* ═══ GOLD VERSE BOX ═══ */
+    .verse-box { margin: 3rem auto; max-width: 780px; padding: 2.5rem 3rem; border: 3px solid var(--gold); background: rgba(201,168,76,0.04); position: relative; }
+    .verse-box::before, .verse-box::after { content: '✦'; position: absolute; color: var(--gold); font-size: 1.2rem; }
+    .verse-box::before { top: -0.7rem; left: 50%; transform: translateX(-50%); background: var(--deep-blue); padding: 0 1rem; }
+    .verse-box::after { bottom: -0.7rem; left: 50%; transform: translateX(-50%); background: var(--deep-blue); padding: 0 1rem; }
+    .verse-box p { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3.5vw, 2.5rem); font-weight: 600; font-style: italic; color: var(--gold-light); line-height: 1.4; }
+    .verse-box cite { display: block; margin-top: 1rem; font-family: 'Lora', serif; font-style: normal; font-size: 1.1rem; color: var(--gold); letter-spacing: 0.15em; text-transform: uppercase; }
+
+    .emet-callout { margin: 3rem auto; max-width: 720px; padding: 2.5rem; background: rgba(255,255,255,0.04); border-left: 5px solid var(--gold); text-align: left; }
+    .emet-callout h3 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--gold); margin-bottom: 1rem; }
+    .emet-callout p { font-size: 1.1rem; line-height: 2; color: rgba(245,230,200,0.75); }
+
+    /* ════ MOSES ════ */
+    .moses-banner { width: 100%; background: var(--midnight); }
+    .moses-banner img { width: 100%; height: auto; display: block; }
+
+    /* ════ COMMANDMENTS ════ */
+    .commandments-section { background: linear-gradient(180deg, var(--midnight) 0%, var(--deep-blue) 100%); text-align: center; padding: 5rem 2rem; color: var(--text-light); }
+    .commandments-inner { max-width: 1100px; margin: 0 auto; }
+    .tablets-container { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin: 3rem auto; max-width: 950px; }
+    .tablet { background: linear-gradient(170deg, #D4C4A0 0%, #C4B48E 30%, #B8A67A 100%); border-radius: 24px 24px 6px 6px; padding: 3rem 2.5rem; box-shadow: 0 10px 40px rgba(0,0,0,0.35), inset 0 2px 0 rgba(255,255,255,0.4); text-align: left; color: var(--text-dark); }
+    .tablet-header { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: var(--deep-blue); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.8rem; text-align: center; border-bottom: 2px solid rgba(26,26,62,0.2); padding-bottom: 1rem; }
+    .commandment { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: baseline; }
+    .commandment-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--gold-dark); flex-shrink: 0; min-width: 2.5rem; text-align: right; line-height: 1.2; }
+    .commandment-text { font-family: 'Lora', serif; font-size: 1.1rem; color: var(--text-dark); line-height: 1.7; }
+    .commandments-message { max-width: 700px; margin: 2rem auto 0; font-size: 1.15rem; line-height: 2; color: rgba(245,230,200,0.75); }
+
+    /* ════ PILLARS ════ */
+    .pillars-section { background: var(--cream); padding: 6rem 2rem; }
+    .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; max-width: 1100px; margin: 3rem auto 0; }
+    .pillar-card { background: #fff; border: 1px solid rgba(201,168,76,0.25); padding: 2.5rem 2rem; position: relative; transition: all 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+    .pillar-card:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+    .pillar-number { font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: var(--gold); opacity: 0.2; position: absolute; top: 0.8rem; right: 1.5rem; }
+    .pillar-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 700; color: var(--deep-blue); margin-bottom: 1rem; }
+    .pillar-text { font-size: 1rem; line-height: 1.8; color: #555; }
+    .pillar-verse { margin-top: 1.5rem; font-style: italic; font-size: 0.9rem; color: var(--gold-dark); border-top: 1px solid rgba(201,168,76,0.25); padding-top: 1rem; }
+
+    /* ════ KINGDOM ════ */
+    .kingdom-section { background: var(--deep-blue); text-align: center; color: var(--text-light); padding: 6rem 2rem; }
+    .kingdom-inner { max-width: 780px; margin: 0 auto; }
+
+    /* ════ COMMUNITY ════ */
+    .community-section { background: var(--cream); padding: 6rem 2rem; }
+    .community-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 2rem; margin: 3rem 0; }
+    .testimonial { background: #fff; padding: 2rem; border-left: 4px solid var(--gold); text-align: left; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+    .testimonial p { font-style: italic; font-size: 1rem; line-height: 1.8; color: #555; margin-bottom: 1rem; }
+    .testimonial cite { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: var(--gold-dark); }
+
+    /* ════ PRAYER ════ */
+    .prayer-section { background: var(--midnight); text-align: center; color: var(--text-light); padding: 6rem 2rem; }
+    .prayer-inner { max-width: 620px; margin: 0 auto; }
+    .prayer-form { margin-top: 2rem; display: flex; flex-direction: column; gap: 1.2rem; }
+    .prayer-form input, .prayer-form textarea { width: 100%; padding: 1.1rem 1.3rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(201,168,76,0.3); color: #fff; font-family: 'Lora', serif; font-size: 1rem; outline: none; transition: border-color 0.3s; }
+    .prayer-form input::placeholder, .prayer-form textarea::placeholder { color: rgba(245,230,200,0.35); }
+    .prayer-form input:focus, .prayer-form textarea:focus { border-color: var(--gold); }
+    .prayer-form textarea { min-height: 150px; resize: vertical; }
+    .prayer-submit { padding: 1.2rem 3rem; background: var(--gold); border: 2px solid var(--gold); color: var(--midnight); font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; align-self: center; }
+    .prayer-submit:hover { background: transparent; color: var(--gold); }
+    .prayer-note { margin-top: 1.5rem; font-size: 0.85rem; color: rgba(245,230,200,0.35); font-style: italic; }
+
+    /* ════ FOOTER ════ */
+    .contact-bar { background: var(--deep-blue); text-align: center; padding: 3rem 2rem; border-top: 3px solid var(--gold); }
+    .contact-bar p { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--gold-light); margin-bottom: 0.5rem; }
+    .contact-bar a { color: var(--gold); text-decoration: none; font-size: 2.2rem; font-family: 'Cormorant Garamond', serif; font-weight: 700; }
+    .contact-bar .location { font-size: 0.9rem; color: rgba(245,230,200,0.35); margin-top: 0.75rem; }
+    footer { background: var(--midnight); padding: 1.5rem; text-align: center; }
+    .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .footer-links a { color: rgba(245,230,200,0.35); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy { font-size: 0.7rem; color: rgba(245,230,200,0.2); }
+
+    /* ════ SHARED ════ */
+    .section-label { font-family: 'Lora', serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--gold); margin-bottom: 1rem; }
+    .section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.5rem; }
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+        nav { padding: 0.6rem 1rem; }
+        .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(13,13,38,0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; }
+        .nav-links.open { display: flex; }
+        .mobile-toggle { display: flex; z-index: 1001; }
+        .pillars-grid, .testimonial-grid { grid-template-columns: 1fr; }
+        .tablets-container { grid-template-columns: 1fr; }
+        .verse-box { padding: 1.5rem; }
+        .emet-letters { gap: 1.5rem; }
+        .music-section { padding: 3.5rem 1.2rem 4rem; }
+    }
+</style>
 ```
-/* ═══ NAV ═══ */
-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 0.8rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(13,13,38,0.92); backdrop-filter: blur(10px); }
-.nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 700; color: var(--gold); text-decoration: none; }
-.nav-links { display: flex; gap: 1.8rem; list-style: none; align-items: center; }
-.nav-links a { color: var(--gold-light); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s; }
-.nav-links a:hover { color: #fff; }
-.mobile-toggle { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; }
-.mobile-toggle span { width: 26px; height: 2px; background: var(--gold-light); }
 
-@keyframes cloudFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)} }
-.nav-community-wrap { display:flex; flex-direction:column; align-items:center; position:relative; padding-bottom:2px; }
-.nav-community-cloud { font-size:1.1rem; line-height:1; display:block; filter:drop-shadow(0 0 6px rgba(255,220,100,0.85)); animation:cloudFloat 3s ease-in-out infinite; }
-.nav-community-rays { position:absolute; top:1.3rem; left:50%; transform:translateX(-50%); width:36px; height:16px; pointer-events:none; }
-.nav-community-link { margin-top:18px; display:block; color:var(--gold)!important; font-weight:700!important; font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; text-decoration:none; }
-
-/* ═══ HERO ═══ */
-.hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; padding-top: 70px; }
-.hero-bg { position: absolute; inset: 0; background-image: url('IMG_6609.jpeg'); background-size: cover; background-position: center 30%; filter: brightness(0.45); }
-.hero-rays { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 50% 10%, rgba(255,200,80,0.18) 0%, rgba(255,160,40,0.08) 40%, transparent 70%); pointer-events: none; }
-.hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(13,13,38,0.1) 0%, rgba(13,13,38,0.35) 60%, rgba(13,13,38,0.9) 100%); }
-.hero-content { position: relative; z-index: 2; text-align: center; padding: 2rem; max-width: 800px; }
-.hero-label { font-family: 'Lora', serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.35em; color: var(--gold); margin-bottom: 1rem; }
-.hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 700; color: #fff; line-height: 1.15; margin-bottom: 1.5rem; text-shadow: 0 2px 30px rgba(0,0,0,0.6); }
-.hero-title em { color: var(--gold); font-style: italic; }
-.hero-sub { font-size: 1.15rem; color: rgba(245,230,200,0.8); max-width: 560px; margin: 0 auto 2.5rem; line-height: 1.8; }
-.hero-cta { display: inline-block; padding: 1.1rem 3rem; background: var(--gold); color: var(--midnight); font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; border: 2px solid var(--gold); transition: all 0.3s; }
-.hero-cta:hover { background: transparent; color: var(--gold); }
-.scroll-hint { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; color: rgba(201,168,76,0.6); font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; animation: bounce 2s infinite; }
-@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
-.scroll-hint svg { width: 20px; height: 20px; }
-
-/* ═══ ORACLE SECTION ═══ */
-.oracle-section { background: var(--deep-blue); padding: 5rem 2rem; text-align: center; }
-.oracle-inner { max-width: 780px; margin: 0 auto; }
-.section-label { font-family: 'Lora', serif; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.3em; color: var(--gold); margin-bottom: 1rem; display: block; }
-.section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); font-weight: 300; color: #fff; line-height: 1.2; margin-bottom: 0.5rem; }
-.oracle-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.25); padding: 2.5rem; margin-top: 2.5rem; text-align: left; }
-.oracle-prompts { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; margin-bottom: 1.5rem; }
-.oracle-prompt-btn { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.25); color: var(--gold-light); font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-style: italic; padding: 0.9rem 1rem; cursor: pointer; text-align: center; transition: all 0.2s; line-height: 1.4; }
-.oracle-prompt-btn:hover { background: rgba(201,168,76,0.1); border-color: var(--gold); color: #fff; }
-.oracle-input-row { display: flex; flex-direction: column; gap: 0.8rem; }
-.oracle-textarea { width: 100%; padding: 1rem 1.2rem; background: rgba(255,255,255,0.06); border: 1px solid rgba(201,168,76,0.3); color: #fff; font-family: 'Lora', serif; font-size: 1rem; outline: none; resize: none; min-height: 80px; transition: border-color 0.3s; }
-.oracle-textarea::placeholder { color: rgba(245,230,200,0.35); }
-.oracle-textarea:focus { border-color: var(--gold); }
-.oracle-ask-btn { align-self: stretch; padding: 1.1rem; background: var(--gold); border: 2px solid var(--gold); color: var(--midnight); font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; }
-.oracle-ask-btn:hover { background: transparent; color: var(--gold); }
-.oracle-ask-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-.oracle-response { margin-top: 1.5rem; padding: 1.5rem; border-left: 4px solid var(--gold); background: rgba(201,168,76,0.05); display: none; }
-.oracle-response.visible { display: block; }
-.oracle-response-text { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--text-light); line-height: 1.8; white-space: pre-wrap; }
-.oracle-loading { text-align: center; padding: 1rem; }
-.oracle-loading-dots { display: inline-flex; gap: 6px; }
-.oracle-loading-dots span { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; animation: dotPulse 1.4s ease-in-out infinite; }
-.oracle-loading-dots span:nth-child(2) { animation-delay: 0.2s; }
-.oracle-loading-dots span:nth-child(3) { animation-delay: 0.4s; }
-@keyframes dotPulse { 0%,80%,100%{opacity:0.2;transform:scale(0.8)} 40%{opacity:1;transform:scale(1)} }
-
-/* ═══ TESTIMONY SECTION ═══ */
-.testimony-section { background: var(--midnight); padding: 5rem 2rem; }
-.testimony-inner { max-width: 900px; margin: 0 auto; }
-.testimony-header { text-align: center; margin-bottom: 3rem; }
-.filter-tabs { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.6rem; margin: 1.5rem 0 2.5rem; }
-.filter-tab { padding: 0.5rem 1.2rem; border: 1px solid rgba(201,168,76,0.3); background: transparent; color: var(--gold-light); font-family: 'Lora', serif; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.2s; }
-.filter-tab.active, .filter-tab:hover { background: rgba(201,168,76,0.12); border-color: var(--gold); color: var(--gold); }
-.posts-grid { display: flex; flex-direction: column; gap: 1.2rem; }
-.post-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.15); padding: 1.5rem 1.8rem; transition: border-color 0.3s; }
-.post-card:hover { border-color: rgba(201,168,76,0.4); }
-.post-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.6rem; flex-wrap: wrap; gap: 0.5rem; }
-.post-author { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 600; color: var(--gold); }
-.post-tag { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.2rem 0.6rem; border: 1px solid rgba(201,168,76,0.3); color: rgba(245,230,200,0.5); }
-.post-text { font-size: 1rem; color: rgba(245,230,200,0.75); line-height: 1.8; margin-bottom: 1rem; }
-.post-actions { display: flex; gap: 1.2rem; align-items: center; }
-.amen-btn { background: none; border: none; color: rgba(201,168,76,0.5); font-family: 'Lora', serif; font-size: 0.85rem; cursor: pointer; transition: color 0.2s; display: flex; align-items: center; gap: 0.4rem; padding: 0; }
-.amen-btn:hover, .amen-btn.amened { color: var(--gold); }
-.share-form-wrap { margin-top: 3rem; border-top: 1px solid rgba(201,168,76,0.15); padding-top: 2.5rem; }
-.share-form { display: flex; flex-direction: column; gap: 1rem; max-width: 680px; margin: 1.5rem auto 0; }
-.share-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.share-input, .share-select, .share-textarea { width: 100%; padding: 0.9rem 1.1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.25); color: #fff; font-family: 'Lora', serif; font-size: 0.95rem; outline: none; transition: border-color 0.3s; }
-.share-select { cursor: pointer; }
-.share-select option { background: var(--deep-blue); }
-.share-input::placeholder, .share-textarea::placeholder { color: rgba(245,230,200,0.3); }
-.share-input:focus, .share-select:focus, .share-textarea:focus { border-color: var(--gold); }
-.share-textarea { min-height: 120px; resize: vertical; }
-.share-submit { padding: 1rem 2.5rem; background: var(--gold); border: 2px solid var(--gold); color: var(--midnight); font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; align-self: center; }
-.share-submit:hover { background: transparent; color: var(--gold); }
-
-/* ═══ PRAYER WALL ═══ */
-.prayer-wall-section { background: var(--deep-blue); padding: 5rem 2rem; text-align: center; }
-.prayer-wall-inner { max-width: 780px; margin: 0 auto; }
-.prayer-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem; margin: 2rem 0; }
-.prayer-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.15); padding: 1.3rem 1.5rem; text-align: left; }
-.prayer-card-name { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--gold); margin-bottom: 0.4rem; }
-.prayer-card-text { font-size: 0.9rem; color: rgba(245,230,200,0.65); line-height: 1.7; margin-bottom: 0.8rem; }
-.pray-for-btn { background: none; border: 1px solid rgba(201,168,76,0.3); color: rgba(201,168,76,0.6); font-size: 0.78rem; padding: 0.35rem 0.8rem; cursor: pointer; transition: all 0.2s; font-family: 'Lora', serif; }
-.pray-for-btn:hover, .pray-for-btn.prayed { border-color: var(--gold); color: var(--gold); }
-.prayer-add-form { display: flex; flex-direction: column; gap: 0.8rem; max-width: 500px; margin: 1.5rem auto 0; }
-.prayer-add-input, .prayer-add-textarea { width: 100%; padding: 0.9rem 1.1rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.25); color: #fff; font-family: 'Lora', serif; font-size: 0.95rem; outline: none; transition: border-color 0.3s; }
-.prayer-add-input::placeholder, .prayer-add-textarea::placeholder { color: rgba(245,230,200,0.3); }
-.prayer-add-input:focus, .prayer-add-textarea:focus { border-color: var(--gold); }
-.prayer-add-textarea { min-height: 90px; resize: vertical; }
-.prayer-add-submit { padding: 0.9rem 2rem; background: transparent; border: 2px solid var(--gold); color: var(--gold); font-family: 'Cormorant Garamond', serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: all 0.3s; align-self: center; }
-.prayer-add-submit:hover { background: var(--gold); color: var(--midnight); }
-
-/* ═══ FOOTER ═══ */
-.contact-bar { background: var(--deep-blue); text-align: center; padding: 3rem 2rem; border-top: 3px solid var(--gold); }
-.contact-bar p { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; color: var(--gold-light); margin-bottom: 0.5rem; }
-.contact-bar a { color: var(--gold); text-decoration: none; font-size: 2.2rem; font-family: 'Cormorant Garamond', serif; font-weight: 700; }
-footer { background: var(--midnight); padding: 1.5rem; text-align: center; }
-.footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
-.footer-links a { color: rgba(245,230,200,0.35); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.3s; }
-.footer-links a:hover { color: var(--gold); }
-.footer-copy { font-size: 0.7rem; color: rgba(245,230,200,0.2); }
-.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-@media (max-width: 768px) {
-  nav { padding: 0.6rem 1rem; }
-  .nav-links { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(13,13,38,0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem; }
-  .nav-links.open { display: flex; }
-  .mobile-toggle { display: flex; z-index: 1001; }
-  .oracle-prompts { grid-template-columns: 1fr; }
-  .share-row { grid-template-columns: 1fr; }
-  .nav-community-rays { display: none; }
-  .nav-community-link { margin-top: 8px; }
-  .prayer-cards { grid-template-columns: 1fr; }
-}
-```
-
-  </style>
 </head>
 <body>
 
 <!-- NAV -->
 
 <nav>
-  <a href="index.html" class="nav-logo">I Believe In You</a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="index.html#home" onclick="closeNav()">Home</a></li>
-    <li><a href="index.html#emet" onclick="closeNav()">EMET — Truth</a></li>
-    <li><a href="index.html#commandments" onclick="closeNav()">The Commandments</a></li>
-    <li><a href="index.html#pillars" onclick="closeNav()">The Way</a></li>
-    <li><a href="index.html#kingdom" onclick="closeNav()">His Kingdom</a></li>
-    <li><a href="index.html#pray" onclick="closeNav()">Let's Pray</a></li>
-    <li>
-      <div class="nav-community-wrap">
-        <span class="nav-community-cloud">&#9729;&#65039;</span>
-        <svg class="nav-community-rays" viewBox="0 0 36 16" xmlns="http://www.w3.org/2000/svg">
-          <line x1="18" y1="0" x2="2"  y2="16" stroke="rgba(255,215,80,0.45)" stroke-width="1"/>
-          <line x1="18" y1="0" x2="8"  y2="16" stroke="rgba(255,215,80,0.65)" stroke-width="1"/>
-          <line x1="18" y1="0" x2="18" y2="16" stroke="rgba(255,215,80,0.95)" stroke-width="1.5"/>
-          <line x1="18" y1="0" x2="28" y2="16" stroke="rgba(255,215,80,0.65)" stroke-width="1"/>
-          <line x1="18" y1="0" x2="34" y2="16" stroke="rgba(255,215,80,0.45)" stroke-width="1"/>
-        </svg>
-        <a href="community.html" onclick="closeNav()" class="nav-community-link">Community</a>
-      </div>
-    </li>
-  </ul>
-  <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <a href="#" class="nav-logo">I Believe In You</a>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home" onclick="closeNav()">Home</a></li>
+        <li><a href="#emet" onclick="closeNav()">EMET — Truth</a></li>
+        <li><a href="#commandments" onclick="closeNav()">The Commandments</a></li>
+        <li><a href="#pillars" onclick="closeNav()">The Way</a></li>
+        <li><a href="#kingdom" onclick="closeNav()">His Kingdom</a></li>
+        <li><a href="#pray" onclick="closeNav()">Let's Pray</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- HERO -->
+<!-- ════ PAGE 1: HERO ════ -->
 
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-rays"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <p class="hero-label">A Place to Gather &amp; Grow</p>
-    <h1 class="hero-title">The <em>Community</em><br>of EMET</h1>
-    <p class="hero-sub">Share your testimony. Ask questions of the Word. Lift up your prayers. Only God can create moments like these — and only community can carry them forward.</p>
-    <a href="#oracle" class="hero-cta">Ask the Word</a>
-  </div>
-  <div class="scroll-hint">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-    <span>Scroll</span>
-  </div>
-</section>
-
-<!-- ASK THE WORD (ORACLE) -->
-
-<section class="oracle-section" id="oracle">
-  <div class="oracle-inner">
-    <span class="section-label">Powered by Scripture &amp; the Holy Spirit</span>
-    <h2 class="section-heading reveal">Ask the Word</h2>
-    <p class="reveal" style="color:rgba(245,230,200,0.55);font-size:1.05rem;margin-top:0.5rem;">Bring your questions, doubts, and struggles. The Word has an answer for all of them.</p>
-
-```
-<div class="oracle-box reveal">
-  <div class="oracle-prompts">
-    <button class="oracle-prompt-btn" onclick="setPrompt(this)">How do I forgive someone who hurt me?</button>
-    <button class="oracle-prompt-btn" onclick="setPrompt(this)">What does EMET mean spiritually?</button>
-    <button class="oracle-prompt-btn" onclick="setPrompt(this)">I feel far from God — what do I do?</button>
-    <button class="oracle-prompt-btn" onclick="setPrompt(this)">How do I know God hears my prayers?</button>
-  </div>
-
-  <div class="oracle-input-row">
-    <textarea class="oracle-textarea" id="oracleInput" placeholder="Why does God allow suffering?"></textarea>
-    <button class="oracle-ask-btn" id="oracleBtn" onclick="askOracle()">ASK</button>
-  </div>
-
-  <div class="oracle-response" id="oracleResponse">
-    <div class="oracle-loading" id="oracleLoading" style="display:none;">
-      <div class="oracle-loading-dots"><span></span><span></span><span></span></div>
+<div class="hero" id="home">
+    <div class="hero-image-wrapper">
+        <img src="jesus-promise.webp" alt="Jesus reaching out — For I know the plans I have for you, declares the LORD — Jeremiah 29:11 — IBelieveInYou.com">
     </div>
-    <div class="oracle-response-text" id="oracleText"></div>
-  </div>
+    <div class="hero-text">
+        <div class="hero-tagline">I Believe In You</div>
+        <h1 class="hero-main-title">The Truth is simple: <em>God loves you</em> and wants peace in His Kingdom on Earth</h1>
+        <a href="#emet" class="hero-cta">Discover the Truth</a>
+    </div>
 </div>
 
-<!-- Verse -->
-<div style="margin-top:3rem;padding:2rem;border-left:3px solid var(--gold);text-align:left;max-width:580px;margin-left:auto;margin-right:auto;" class="reveal">
-  <p style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;color:var(--gold-light);line-height:1.6;">
-    &ldquo;For the word of God is alive and active, sharper than any double-edged sword.&rdquo;
-  </p>
-  <cite style="display:block;margin-top:0.8rem;font-family:'Lora',serif;font-style:normal;font-size:0.85rem;color:var(--gold);letter-spacing:0.15em;text-transform:uppercase;">&mdash; Hebrews 4:12</cite>
-</div>
+<!-- ════════════════════════════════════════════════════ -->
+
+<!-- MUSIC PLAYER — Don Williams · I Believe In You      -->
+
+<!-- ════════════════════════════════════════════════════ -->
+
+<section class="music-section" id="music">
+    <div class="music-inner">
+        <p class="music-label reveal">A Song for You</p>
+        <h2 class="music-title reveal"><em>I Believe In You</em></h2>
+        <p class="music-artist reveal">Don Williams &nbsp;&middot;&nbsp; 1980</p>
+
 ```
-
-  </div>
-</section>
-
-<!-- TESTIMONY WALL -->
-
-<section class="testimony-section" id="testimonies">
-  <div class="testimony-inner">
-    <div class="testimony-header reveal">
-      <span class="section-label">Real People, Real Faith</span>
-      <h2 class="section-heading">Share Your Testimony</h2>
-      <p style="color:rgba(245,230,200,0.5);font-size:1.05rem;margin-top:0.5rem;">Your story might be the light someone else needs today.</p>
+    <div class="player-frame reveal">
+        <div class="player-corner-tl"></div>
+        <div class="player-corner-br"></div>
+        <div class="player-frame-inner">
+            <iframe
+                src="https://www.youtube.com/embed/3vh8hrIz-5c?rel=0&modestbranding=1&color=white"
+                title="Don Williams — I Believe In You"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
     </div>
 
-```
-<div class="filter-tabs reveal">
-  <button class="filter-tab active" onclick="filterPosts('all',this)">All</button>
-  <button class="filter-tab" onclick="filterPosts('testimony',this)">Testimony</button>
-  <button class="filter-tab" onclick="filterPosts('prayer',this)">Prayer</button>
-  <button class="filter-tab" onclick="filterPosts('revival',this)">Revival</button>
-  <button class="filter-tab" onclick="filterPosts('doubt',this)">Doubt &amp; Faith</button>
-</div>
+    <p class="music-quote reveal">
+        "I don't believe in superstars, organic food and foreign cars&hellip;<br>
+        but I believe in you."
+        <span>Don Williams &mdash; I Believe In You (1980)</span>
+    </p>
 
-<div class="posts-grid" id="postsGrid"></div>
-
-<div class="share-form-wrap reveal">
-  <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;color:var(--gold);text-align:center;margin-bottom:0.3rem;">Add Your Voice</h3>
-  <p style="text-align:center;color:rgba(245,230,200,0.4);font-size:0.9rem;">No account needed. Your words matter.</p>
-  <div class="share-form">
-    <div class="share-row">
-      <input type="text" class="share-input" id="shareAuthor" placeholder="Your name (or Anonymous)">
-      <select class="share-select" id="shareTag">
-        <option value="testimony">Testimony</option>
-        <option value="prayer">Prayer</option>
-        <option value="revival">Revival</option>
-        <option value="doubt">Doubt &amp; Faith</option>
-      </select>
+    <div class="gold-divider reveal" style="margin-top: 3.5rem;">
+        <span class="gold-divider-star">✦</span>
     </div>
-    <textarea class="share-textarea" id="shareText" placeholder="Share what God has done in your life, a question on your heart, or a moment of faith..."></textarea>
-    <button class="share-submit" onclick="submitPost()">Share with the Community</button>
-  </div>
 </div>
 ```
 
-  </div>
 </section>
 
-<!-- PRAYER WALL -->
+<!-- ════ PAGE 2: EMET — THE TRUTH ════ -->
 
-<section class="prayer-wall-section" id="prayerwall">
-  <div class="prayer-wall-inner">
-    <span class="section-label">Lift Each Other Up</span>
-    <h2 class="section-heading reveal">The Prayer Wall</h2>
-    <p class="reveal" style="color:rgba(245,230,200,0.5);font-size:1.05rem;margin:0.5rem 0 0;">Click "I'll Pray" to stand with someone in their need.</p>
+<section class="emet-section" id="emet">
+    <div class="emet-inner">
+        <span class="section-label">The Hebrew Word for Truth</span>
+        <h2 class="section-heading reveal" style="color: #fff;">What is אמת (EMET)?</h2>
 
 ```
-<div class="prayer-cards" id="prayerCards"></div>
+    <div class="emet-hero-image reveal">
+        <img src="Jesus-water.webp" alt="Jesus standing in living water with EMET carved in Hebrew on the rock behind Him">
+    </div>
 
-<div class="prayer-add-form reveal">
-  <input type="text" class="prayer-add-input" id="prayerName" placeholder="Your name">
-  <textarea class="prayer-add-textarea" id="prayerRequest" placeholder="Share your prayer request..."></textarea>
-  <button class="prayer-add-submit" onclick="addPrayer()">Add to the Wall 🙏</button>
+    <!-- 3D CHISELED HEBREW — Right to Left -->
+    <div class="emet-letters" id="emetLetters">
+        <div class="emet-letter">
+            <span class="hebrew-char">א</span>
+            <span class="letter-name">Aleph</span>
+            <span class="letter-meaning">The Beginning</span>
+            <span class="letter-detail">God, the Creator of all things</span>
+        </div>
+        <div class="emet-letter">
+            <span class="hebrew-char">מ</span>
+            <span class="letter-name">Mem</span>
+            <span class="letter-meaning">The Water &middot; The Journey</span>
+            <span class="letter-detail">Living water flowing through life</span>
+        </div>
+        <div class="emet-letter">
+            <span class="hebrew-char">ת</span>
+            <span class="letter-name">Tav</span>
+            <span class="letter-meaning">The Sign &middot; The Cross</span>
+            <span class="letter-detail">The mark of covenant &amp; fulfillment</span>
+        </div>
+    </div>
+
+    <p class="emet-text reveal">
+        EMET is composed of the first, middle, and last letters of the Hebrew alphabet &mdash; read right to left. Truth spans <strong style="color: var(--gold);">everything</strong>, from beginning to end. It is the foundation upon which all things stand.
+    </p>
+
+    <div class="emet-callout reveal">
+        <h3>Truth From Beginning to End</h3>
+        <p>Remove the first letter (א Aleph) from אמת and you get מת &mdash; which means <strong style="color: var(--gold);">"death"</strong> in Hebrew. Without God at the beginning, truth dies. EMET teaches us that God must be at the foundation of all truth. His love, His presence, His word &mdash; they hold everything together.</p>
+    </div>
+
+    <div class="verse-box reveal">
+        <p>"You will know the truth, and the truth shall set you free."</p>
+        <cite>&mdash; John 8:32</cite>
+    </div>
 </div>
 ```
 
-  </div>
 </section>
+
+<!-- ════ PAGE 3: MOSES — FULL IMAGE ════ -->
+
+<div class="moses-banner" id="commandments">
+    <img src="jeremiah-verse.webp" alt="Moses holding the Ten Commandments tablet — Exodus 20:2-17">
+</div>
+
+<!-- ════ PAGE 4: TEN COMMANDMENTS ════ -->
+
+<section class="commandments-section">
+    <div class="commandments-inner">
+        <span class="section-label">The Foundation of Truth</span>
+        <h2 class="section-heading reveal" style="color: #fff;">The Law Given to Moses</h2>
+        <p class="reveal" style="max-width: 680px; margin: 0 auto 1.5rem; font-size: 1.15rem; color: rgba(245,230,200,0.7);">
+            God gave Moses these commandments on Mount Sinai &mdash; not as chains, but as the path to freedom. They are the blueprint for heaven on earth.
+        </p>
+
+```
+    <div class="tablets-container">
+        <div class="tablet reveal">
+            <div class="tablet-header">Our Duty to God</div>
+            <div class="commandment"><span class="commandment-num">I</span><span class="commandment-text">You shall have no other gods before Me.</span></div>
+            <div class="commandment"><span class="commandment-num">II</span><span class="commandment-text">You shall not make for yourself an idol or worship any graven image.</span></div>
+            <div class="commandment"><span class="commandment-num">III</span><span class="commandment-text">You shall not take the name of the LORD your God in vain.</span></div>
+            <div class="commandment"><span class="commandment-num">IV</span><span class="commandment-text">Remember the Sabbath day, to keep it holy.</span></div>
+            <div class="commandment"><span class="commandment-num">V</span><span class="commandment-text">Honor your father and your mother.</span></div>
+        </div>
+        <div class="tablet reveal">
+            <div class="tablet-header">Our Duty to Each Other</div>
+            <div class="commandment"><span class="commandment-num">VI</span><span class="commandment-text">You shall not murder.</span></div>
+            <div class="commandment"><span class="commandment-num">VII</span><span class="commandment-text">You shall not commit adultery.</span></div>
+            <div class="commandment"><span class="commandment-num">VIII</span><span class="commandment-text">You shall not steal.</span></div>
+            <div class="commandment"><span class="commandment-num">IX</span><span class="commandment-text">You shall not bear false witness against your neighbor.</span></div>
+            <div class="commandment"><span class="commandment-num">X</span><span class="commandment-text">You shall not covet anything that belongs to your neighbor.</span></div>
+        </div>
+    </div>
+
+    <div class="verse-box reveal" style="max-width: 620px;">
+        <p>"If you love Me, keep My commandments."</p>
+        <cite>&mdash; John 14:15</cite>
+    </div>
+
+    <p class="commandments-message reveal">
+        These are not rules to oppress us. They are the blueprint for peace &mdash; the same peace Jesus lived and taught. When we follow them, we build God's Kingdom right here, right now.
+    </p>
+</div>
+```
+
+</section>
+
+<!-- PILLARS -->
+
+<section class="pillars-section" id="pillars">
+    <div style="max-width: 1100px; margin: 0 auto; text-align: center;">
+        <span class="section-label" style="color: var(--gold-dark);">Living Like Jesus</span>
+        <h2 class="section-heading reveal" style="color: var(--deep-blue);">The Way to Discover Heaven on Earth</h2>
+        <div class="pillars-grid">
+            <div class="pillar-card reveal">
+                <span class="pillar-number">01</span>
+                <h3 class="pillar-title">Love Without Condition</h3>
+                <p class="pillar-text">Jesus loved the outcast, the broken, and the lost. True peace begins when we love others exactly as they are.</p>
+                <p class="pillar-verse">"A new command I give you: Love one another." &mdash; John 13:34</p>
+            </div>
+            <div class="pillar-card reveal">
+                <span class="pillar-number">02</span>
+                <h3 class="pillar-title">Forgive and Be Free</h3>
+                <p class="pillar-text">Confession and forgiveness break every chain. When we let go of anger, we make room for God's grace.</p>
+                <p class="pillar-verse">"If we confess our sins, He is faithful and just to forgive us." &mdash; 1 John 1:9</p>
+            </div>
+            <div class="pillar-card reveal">
+                <span class="pillar-number">03</span>
+                <h3 class="pillar-title">Serve One Another</h3>
+                <p class="pillar-text">Jesus washed the feet of His disciples. The kingdom is built by humility, by lifting others up.</p>
+                <p class="pillar-verse">"The greatest among you shall be your servant." &mdash; Matthew 23:11</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- KINGDOM -->
+
+<section class="kingdom-section" id="kingdom">
+    <div class="kingdom-inner">
+        <span class="section-label">Peace in His Kingdom</span>
+        <h2 class="section-heading reveal" style="color: #fff;">Heaven Discovered on Earth</h2>
+        <div class="verse-box reveal">
+            <p>"Your kingdom come, Your will be done, on earth as it is in heaven."</p>
+            <cite>&mdash; Matthew 6:10</cite>
+        </div>
+        <p class="reveal" style="font-size: 1.15rem; line-height: 2; color: rgba(245,230,200,0.65); margin-top: 2rem;">
+            God's kingdom is not a distant place beyond the clouds. It is here, now, in every act of kindness, in every word of truth. When a community believes together &mdash; heaven breaks through.
+        </p>
+    </div>
+</section>
+
+<!-- COMMUNITY -->
+
+<section class="community-section">
+    <div class="community-inner">
+        <span class="section-label" style="color: var(--gold-dark);">Our Community</span>
+        <h2 class="section-heading reveal" style="color: var(--deep-blue);">Voices of Belief</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial reveal"><p>"I came broken, carrying years of guilt. Through prayer I found the courage to confess and the grace to start again."</p><cite>&mdash; A grateful believer</cite></div>
+            <div class="testimonial reveal"><p>"EMET isn't just a word to me anymore. It's how I try to live &mdash; truthfully, lovingly, and in service."</p><cite>&mdash; A community member</cite></div>
+            <div class="testimonial reveal"><p>"When I stopped hiding and started believing, everything changed. God's love is real."</p><cite>&mdash; A new believer</cite></div>
+        </div>
+    </div>
+</section>
+
+<!-- PRAYER -->
+
+<section class="prayer-section" id="pray">
+    <div class="prayer-inner">
+        <span class="section-label">Let's Pray Together 🙏</span>
+        <h2 class="section-heading reveal" style="color: #fff;">Confess Now to Be Set Free</h2>
+        <p class="reveal" style="color: rgba(245,230,200,0.45); font-size: 1.05rem; margin-bottom: 1rem;">Leave your worries below. Whatever is on your heart, bring it before God.</p>
+        <form class="prayer-form reveal" action="https://formspree.io/f/mbdaelkl" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required aria-label="Your name">
+            <input type="email" name="email" placeholder="Your Email" required aria-label="Your email">
+            <input type="hidden" name="_subject" value="New Prayer from WeBelieveInYou.com">
+            <textarea name="message" placeholder="Share your prayer, your confession, or simply what's on your heart..." required aria-label="Your prayer"></textarea>
+            <button class="prayer-submit" type="submit">Send Your Prayer</button>
+        </form>
+        <p class="prayer-note">Your words are sacred. We pray with you, not just for you.</p>
+    </div>
+</section>
+
+<!-- CONTACT -->
+
+<div class="contact-bar">
+    <p>Heavens Urgent Care</p>
+    <a href="tel:18004282022">1-800-428-2022</a>
+    <p class="location">South Idaho Road, Apache Junction, AZ</p>
+</div>
 
 <!-- FOOTER -->
 
-<div class="contact-bar">
-  <p>Heaven is where you make it</p>
-  <a href="tel:18004282022">1-800-428-2022</a>
-  <p style="font-size:0.9rem;color:rgba(245,230,200,0.35);margin-top:0.75rem;">Arizona</p>
-</div>
 <footer>
-  <div class="footer-links">
-    <a href="index.html">Home</a>
-    <a href="index.html#emet">EMET</a>
-    <a href="index.html#commandments">Commandments</a>
-    <a href="index.html#pillars">The Way</a>
-    <a href="index.html#pray">Pray</a>
-    <a href="community.html">Community</a>
-  </div>
-  <p class="footer-copy">&copy; 2026 I Believe In You &mdash; All Rights Reserved. <span style="color:#C46B6B;">&hearts;</span></p>
+    <div class="footer-links"><a href="#home">Home</a><a href="#emet">EMET</a><a href="#commandments">Commandments</a><a href="#pillars">The Way</a><a href="#kingdom">His Kingdom</a><a href="#pray">Pray</a></div>
+    <p class="footer-copy">&copy; 2026 I Believe In You &mdash; All Rights Reserved. <span style="color:#C46B6B;">&hearts;</span></p>
 </footer>
 
 <script>
-  // ── Nav ──
-  const toggle = document.getElementById('mobileToggle');
-  const navLinks = document.getElementById('navLinks');
-  toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
-  function closeNav() { navLinks.classList.remove('open'); }
-
-  // ── Reveal on scroll ──
-  const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-  // ── Oracle ──
-  function setPrompt(btn) {
-    document.getElementById('oracleInput').value = btn.textContent.trim();
-  }
-
-  async function askOracle() {
-    const question = document.getElementById('oracleInput').value.trim();
-    if (!question) return;
-
-    const btn = document.getElementById('oracleBtn');
-    const loading = document.getElementById('oracleLoading');
-    const responseBox = document.getElementById('oracleResponse');
-    const responseText = document.getElementById('oracleText');
-
-    btn.disabled = true;
-    loading.style.display = 'block';
-    responseText.textContent = '';
-    responseBox.classList.add('visible');
-
-    try {
-      const res = await fetch('https://emet-oracle.powell-6af.workers.dev', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ question })
-      });
-
-      const data = await res.json();
-      loading.style.display = 'none';
-      btn.disabled = false;
-
-      if (data.answer) {
-        responseText.textContent = data.answer;
-      } else if (data.error) {
-        responseText.textContent = 'The Word is momentarily quiet. Please try again shortly.';
-      } else {
-        responseText.textContent = 'Something went wrong. Please try again.';
-      }
-    } catch (err) {
-      loading.style.display = 'none';
-      btn.disabled = false;
-      responseText.textContent = 'Unable to connect. Please check your internet connection and try again.';
-    }
-  }
-
-  // Enter key to submit
-  document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('oracleInput').addEventListener('keydown', e => {
-      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); askOracle(); }
-    });
-  });
-
-  // ── Testimony Posts ──
-  let posts = [
-    { id:1, author:'Maria T.', tag:'testimony', text:'I lost everything in 2022 — my job, my marriage, my home. I cried out to God in desperation. Six months later I had a new job, new peace, and a new understanding of His grace. EMET. He is Truth.', amens:14, amened:false },
-    { id:2, author:'James R.', tag:'revival', text:'Our small group has been studying the Hebrew letters of EMET for three weeks. Something is shifting in our community. People are showing up, bringing neighbors. This feels like the beginning of something.', amens:9, amened:false },
-    { id:3, author:'Anonymous', tag:'doubt', text:'I\'ll be honest — I struggle to believe sometimes. But I keep coming back because nothing else has ever offered me the kind of peace I feel when I open the Word. That has to mean something.', amens:22, amened:false },
-    { id:4, author:'Sarah K.', tag:'prayer', text:'Please pray for my son who is going through addiction recovery. He took a big step this week and asked for help. God is moving in his heart. Thank you for being a community that lifts each other up.', amens:31, amened:false }
-  ];
-  let activeFilter = 'all';
-
-  function renderPosts() {
-    const grid = document.getElementById('postsGrid');
-    const filtered = activeFilter === 'all' ? posts : posts.filter(p => p.tag === activeFilter);
-    grid.innerHTML = filtered.map(p => `
-      <div class="post-card">
-        <div class="post-header">
-          <span class="post-author">${p.author}</span>
-          <span class="post-tag">${p.tag}</span>
-        </div>
-        <p class="post-text">${p.text}</p>
-        <div class="post-actions">
-          <button class="amen-btn ${p.amened?'amened':''}" onclick="amenPost(${p.id})">
-            🙏 Amen <span>(${p.amens})</span>
-          </button>
-        </div>
-      </div>`).join('');
-  }
-
-  function amenPost(id) {
-    const post = posts.find(p => p.id === id);
-    if (!post) return;
-    if (post.amened) { post.amens--; post.amened = false; }
-    else { post.amens++; post.amened = true; }
-    renderPosts();
-  }
-
-  function filterPosts(tag, btn) {
-    activeFilter = tag;
-    document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
-    renderPosts();
-  }
-
-  function submitPost() {
-    const author = document.getElementById('shareAuthor').value.trim() || 'Anonymous';
-    const tag = document.getElementById('shareTag').value;
-    const text = document.getElementById('shareText').value.trim();
-    if (!text) { alert('Please share something before posting.'); return; }
-    posts.unshift({ id: Date.now(), author, tag, text, amens: 0, amened: false });
-    document.getElementById('shareAuthor').value = '';
-    document.getElementById('shareText').value = '';
-    renderPosts();
-    document.getElementById('postsGrid').scrollIntoView({ behavior: 'smooth' });
-  }
-
-  // ── Prayer Wall ──
-  let prayers = [
-    { id:1, name:'Robert M.', request:'Praying for healing in my family. We\'ve been through a rough season. Believing for restoration.', count:18, prayed:false },
-    { id:2, name:'Denise L.', request:'My daughter starts college next week. Pray for wisdom, protection, and that she keeps her faith strong.', count:24, prayed:false },
-    { id:3, name:'Anonymous', request:'Struggling with loneliness. Asking God to bring the right people into my life.', count:37, prayed:false }
-  ];
-
-  function renderPrayers() {
-    document.getElementById('prayerCards').innerHTML = prayers.map(p => `
-      <div class="prayer-card">
-        <div class="prayer-card-name">🕯️ ${p.name}</div>
-        <p class="prayer-card-text">${p.request}</p>
-        <button class="pray-for-btn ${p.prayed?'prayed':''}" onclick="prayFor(${p.id})">
-          ${p.prayed ? '✓ Praying' : "I'll Pray"} (${p.count})
-        </button>
-      </div>`).join('');
-  }
-
-  function prayFor(id) {
-    const p = prayers.find(x => x.id === id);
-    if (!p) return;
-    if (p.prayed) { p.count--; p.prayed = false; }
-    else { p.count++; p.prayed = true; }
-    renderPrayers();
-  }
-
-  function addPrayer() {
-    const name = document.getElementById('prayerName').value.trim() || 'Anonymous';
-    const req = document.getElementById('prayerRequest').value.trim();
-    if (!req) { alert('Please enter a prayer request.'); return; }
-    prayers.unshift({ id: Date.now(), name, request: req, count: 0, prayed: false });
-    document.getElementById('prayerName').value = '';
-    document.getElementById('prayerRequest').value = '';
-    renderPrayers();
-  }
-
-  renderPosts();
-  renderPrayers();
+    const toggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+    function closeNav() { navLinks.classList.remove('open'); }
+    const obs = new IntersectionObserver(e => { e.forEach(x => { if (x.isIntersecting) x.target.classList.add('visible'); }); }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    const emetObs = new IntersectionObserver(e => { e.forEach(x => { if (x.isIntersecting) document.querySelectorAll('.emet-letter').forEach(l => l.classList.add('animate')); }); }, { threshold: 0.25 });
+    emetObs.observe(document.getElementById('emetLetters'));
+    function submitPrayer() {}
 </script>
 
 </body>
