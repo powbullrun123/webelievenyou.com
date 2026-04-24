@@ -347,7 +347,7 @@
       if (data.answer) {
         responseText.textContent = data.answer;
       } else if (data.error) {
-        responseText.textContent = 'The Word is momentarily quiet. Please try again shortly.';
+        responseText.textContent = 'Error: ' + data.error;
       } else {
         responseText.textContent = 'Something went wrong. Please try again.';
       }
