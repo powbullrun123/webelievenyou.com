@@ -2,9 +2,6 @@
 
 <html lang="en">
 <head>
-   <link rel="icon" type="image/png" href="cross-truth.png">
-    <link rel="apple-touch-icon" href="cross-truth.png">
-    <meta name="msapplication-TileImage" content="cross-truth.png">
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -261,11 +258,29 @@
 <!-- ASK THE WORD (ORACLE) -->
 <section class="oracle-section" id="oracle">
   <div class="oracle-inner">
+
+    <!-- Scarcity banner -->
+    <div class="reveal" style="background:rgba(201,168,76,0.1);border:1px solid rgba(201,168,76,0.4);padding:1rem 1.5rem;text-align:center;margin-bottom:2rem;">
+      <p style="font-family:'Lora',serif;font-size:0.78rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;">⚠️ Limited Availability</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:rgba(245,230,200,0.85);line-height:1.6;">This feature may be taken down next month. <strong style="color:var(--gold);">Use your questions now</strong> while access is still open.</p>
+    </div>
+
     <span class="section-label">Powered by Scripture &amp; the Holy Spirit</span>
     <h2 class="section-heading reveal">Ask the Word</h2>
-    <p class="reveal" style="color:rgba(245,230,200,0.55);font-size:1.05rem;margin-top:0.5rem;">Bring your questions, doubts, and struggles. The Word has an answer for all of them.</p>
+    <p class="reveal" style="color:rgba(245,230,200,0.55);font-size:1.05rem;margin-top:0.5rem;">You have been granted <strong style="color:var(--gold);">3 questions</strong> to ask the Word of God — in complete confidence. Use them wisely.</p>
 
     <div class="oracle-box reveal">
+
+      <!-- Question counter -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;padding-bottom:1.2rem;border-bottom:1px solid rgba(201,168,76,0.15);">
+        <p style="font-family:'Lora',serif;font-size:0.75rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);">Your Questions Remaining</p>
+        <div style="display:flex;gap:8px;" id="questionDots">
+          <span style="width:14px;height:14px;border-radius:50%;background:var(--gold);display:inline-block;" id="dot1"></span>
+          <span style="width:14px;height:14px;border-radius:50%;background:var(--gold);display:inline-block;" id="dot2"></span>
+          <span style="width:14px;height:14px;border-radius:50%;background:var(--gold);display:inline-block;" id="dot3"></span>
+        </div>
+      </div>
+
       <div class="oracle-prompts">
         <button class="oracle-prompt-btn" onclick="setPrompt(this)">How do I forgive someone who hurt me?</button>
         <button class="oracle-prompt-btn" onclick="setPrompt(this)">What does EMET mean spiritually?</button>
@@ -274,8 +289,8 @@
       </div>
 
       <div class="oracle-input-row">
-        <textarea class="oracle-textarea" id="oracleInput" placeholder="Why does God allow suffering?"></textarea>
-        <button class="oracle-ask-btn" id="oracleBtn" onclick="askOracle()">ASK</button>
+        <textarea class="oracle-textarea" id="oracleInput" placeholder="Ask anything that is on your heart..."></textarea>
+        <button class="oracle-ask-btn" id="oracleBtn" onclick="askOracle()">ASK THE WORD</button>
       </div>
 
       <div class="oracle-response" id="oracleResponse">
@@ -284,6 +299,19 @@
         </div>
         <div class="oracle-response-text" id="oracleText"></div>
       </div>
+
+      <!-- Privacy & Confidentiality Notice -->
+      <div style="margin-top:2rem;padding:1.8rem;background:rgba(255,255,255,0.03);border:1px solid rgba(201,168,76,0.2);">
+        <p style="font-family:'Lora',serif;font-size:0.75rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;text-align:center;">🔒 Your Sacred Space — Complete Confidentiality</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.15rem;color:rgba(245,230,200,0.8);line-height:1.85;text-align:center;margin-bottom:0.8rem;">Your questions are between <strong style="color:var(--gold);">you and the Word.</strong> We do not store, log, read, or share your questions. The creator of this site cannot see what you ask — ever. No account required. No judgment. No record.</p>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-style:italic;color:rgba(245,230,200,0.5);text-align:center;">This is your moment. Ask what you have never been able to ask out loud.</p>
+      </div>
+
+      <!-- Scarcity close -->
+      <div style="margin-top:1.5rem;padding:1.2rem;background:rgba(201,168,76,0.06);border-left:4px solid var(--gold);text-align:left;">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:rgba(245,230,200,0.75);line-height:1.7;"><strong style="color:var(--gold);">Why only 3 questions?</strong> This feature is powered by real technology with real costs. We are offering it freely for a limited time as a gift to this community. We may close access next month. If the Word speaks to you today — share this page with someone who needs it. 🙏</p>
+      </div>
+
     </div>
 
     <!-- Verse -->
@@ -381,12 +409,31 @@
   const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), { threshold: 0.1 });
   document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-  // ── Oracle ──
+  // ── Oracle — 3 Question Limit ──
+  let questionsUsed = 0;
+  const maxQuestions = 3;
+
+  function updateDots() {
+    const remaining = maxQuestions - questionsUsed;
+    ['dot1','dot2','dot3'].forEach((id, i) => {
+      const dot = document.getElementById(id);
+      if (dot) dot.style.background = i < remaining ? 'var(--gold)' : 'rgba(201,168,76,0.15)';
+    });
+  }
+
   function setPrompt(btn) {
     document.getElementById('oracleInput').value = btn.textContent.trim();
   }
 
   async function askOracle() {
+    if (questionsUsed >= maxQuestions) {
+      const responseText = document.getElementById('oracleText');
+      const responseBox = document.getElementById('oracleResponse');
+      responseText.textContent = 'You have used your 3 questions. We hope the Word spoke to your heart today. Please share this page with someone who needs it. 🙏';
+      responseBox.classList.add('visible');
+      return;
+    }
+
     const question = document.getElementById('oracleInput').value.trim();
     if (!question) return;
 
@@ -409,13 +456,25 @@
 
       const data = await res.json();
       loading.style.display = 'none';
-      btn.disabled = false;
 
       if (data.answer) {
+        questionsUsed++;
+        updateDots();
         responseText.textContent = data.answer;
+        const remaining = maxQuestions - questionsUsed;
+        if (remaining <= 0) {
+          btn.textContent = 'No Questions Remaining';
+          btn.disabled = true;
+          btn.style.opacity = '0.5';
+        } else {
+          btn.disabled = false;
+          btn.textContent = `ASK THE WORD (${remaining} remaining)`;
+        }
       } else if (data.error) {
-        responseText.textContent = 'Error: ' + data.error;
+        btn.disabled = false;
+        responseText.textContent = 'The Word is momentarily quiet. Please try again shortly.';
       } else {
+        btn.disabled = false;
         responseText.textContent = 'Something went wrong. Please try again.';
       }
     } catch (err) {
@@ -427,6 +486,7 @@
 
   // Enter key to submit
   document.addEventListener('DOMContentLoaded', () => {
+    updateDots();
     document.getElementById('oracleInput').addEventListener('keydown', e => {
       if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); askOracle(); }
     });
