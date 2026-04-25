@@ -33,6 +33,7 @@
       color: var(--light);
       line-height: 1.7;
       overflow-x: hidden;
+      font-size: 18px;
     }
 
     /* ─── HERO ─── */
@@ -70,7 +71,7 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      max-width: 800px;
+      max-width: 900px;
       padding: 2rem;
       animation: heroFadeIn 2s ease-out;
     }
@@ -82,7 +83,7 @@
 
     .hero-eyebrow {
       font-family: 'Lato', sans-serif;
-      font-size: 0.85rem;
+      font-size: 1rem;
       letter-spacing: 6px;
       text-transform: uppercase;
       color: var(--gold);
@@ -92,11 +93,11 @@
 
     .hero h1 {
       font-family: 'Cinzel', serif;
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      font-weight: 700;
+      font-size: clamp(3.2rem, 7vw, 6rem);
+      font-weight: 900;
       color: var(--warm-white);
-      line-height: 1.15;
-      margin-bottom: 1rem;
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
       text-shadow: 0 4px 30px rgba(0,0,0,0.6);
     }
 
@@ -104,17 +105,17 @@
 
     .hero-scripture {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+      font-size: clamp(1.3rem, 2.8vw, 1.65rem);
       font-style: italic;
       color: var(--gold-light);
-      max-width: 600px;
+      max-width: 650px;
       margin: 0 auto 0.6rem;
       line-height: 1.6;
     }
 
     .hero-cite {
       font-family: 'Cinzel', serif;
-      font-size: 0.85rem;
+      font-size: 1rem;
       color: var(--gold);
       letter-spacing: 3px;
       margin-bottom: 2.5rem;
@@ -122,7 +123,7 @@
 
     .hero-foundation {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.05rem;
+      font-size: 1.2rem;
       font-style: italic;
       color: rgba(245,240,232,0.6);
       margin-bottom: 2rem;
@@ -131,12 +132,12 @@
     .hero-cta {
       display: inline-block;
       font-family: 'Cinzel', serif;
-      font-size: 0.95rem;
+      font-size: 1.1rem;
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--deep);
       background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      padding: 1rem 3rem;
+      padding: 1.1rem 3.5rem;
       text-decoration: none;
       transition: all 0.4s ease;
       box-shadow: 0 4px 25px rgba(201,168,76,0.3);
@@ -164,13 +165,13 @@
     }
 
     .intro-inner {
-      max-width: 720px;
+      max-width: 780px;
       margin: 0 auto;
     }
 
     .intro h2 {
       font-family: 'Cinzel', serif;
-      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
       color: var(--gold);
       margin-bottom: 2rem;
       font-weight: 600;
@@ -178,7 +179,7 @@
 
     .intro p {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.25rem;
+      font-size: 1.45rem;
       color: var(--light);
       line-height: 1.9;
       margin-bottom: 1.5rem;
@@ -187,7 +188,7 @@
 
     .intro p strong {
       color: var(--gold-light);
-      font-weight: 600;
+      font-weight: 700;
     }
 
     /* ─── THREE STEPS ─── */
@@ -197,16 +198,16 @@
     }
 
     .steps-grid {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2.5rem;
     }
 
     .step-card {
       text-align: center;
-      padding: 3rem 2rem;
+      padding: 3rem 2.5rem;
       background: rgba(7,16,24,0.5);
       border: 1px solid rgba(201,168,76,0.15);
       transition: all 0.4s ease;
@@ -220,7 +221,7 @@
 
     .step-number {
       font-family: 'Cinzel', serif;
-      font-size: 3rem;
+      font-size: 3.5rem;
       font-weight: 900;
       color: var(--gold);
       opacity: 0.3;
@@ -229,7 +230,7 @@
 
     .step-card h3 {
       font-family: 'Cinzel', serif;
-      font-size: 1.15rem;
+      font-size: 1.35rem;
       color: var(--gold-light);
       margin-bottom: 1rem;
       letter-spacing: 2px;
@@ -237,10 +238,10 @@
 
     .step-card p {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       color: var(--light);
       opacity: 0.8;
-      line-height: 1.7;
+      line-height: 1.8;
     }
 
     /* ─── CHAIN BREAK / SCRIPTURE ─── */
@@ -251,10 +252,10 @@
     }
 
     .chain-break blockquote {
-      max-width: 650px;
+      max-width: 700px;
       margin: 0 auto;
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
       font-style: italic;
       color: var(--warm-white);
       line-height: 1.6;
@@ -263,7 +264,7 @@
 
     .chain-break cite {
       font-family: 'Cinzel', serif;
-      font-size: 0.85rem;
+      font-size: 1rem;
       color: var(--gold);
       letter-spacing: 3px;
       font-style: normal;
@@ -276,41 +277,50 @@
     }
 
     .oracle-container {
-      max-width: 700px;
+      max-width: 850px;
       margin: 0 auto;
       text-align: center;
     }
 
     .oracle-header h2 {
       font-family: 'Cinzel', serif;
-      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
       color: var(--gold);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
+      font-weight: 900;
     }
 
     .oracle-subtitle {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
+      font-size: 1.5rem;
+      color: var(--warm-white);
+      margin-bottom: 0.3rem;
+    }
+
+    .oracle-subtitle strong {
+      color: var(--warm-white);
+      font-weight: 700;
+    }
+
+    .oracle-subtitle em {
+      color: var(--gold-light);
       font-style: italic;
-      color: var(--light);
-      opacity: 0.7;
-      margin-bottom: 2rem;
     }
 
     /* Gold dot counter */
     .question-counter {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      margin-bottom: 2rem;
+      gap: 16px;
+      margin: 1.5rem 0;
     }
 
     .q-dot {
-      width: 14px;
-      height: 14px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
       background: var(--gold);
-      box-shadow: 0 0 10px rgba(201,168,76,0.5);
+      box-shadow: 0 0 12px rgba(201,168,76,0.5);
       transition: all 0.5s ease;
     }
 
@@ -321,7 +331,7 @@
 
     .counter-label {
       font-family: 'Lato', sans-serif;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       color: var(--gold);
       letter-spacing: 3px;
       text-transform: uppercase;
@@ -329,19 +339,19 @@
       opacity: 0.7;
     }
 
-    /* Chat interface */
+    /* Chat interface — LARGE */
     .oracle-chat {
       background: rgba(27,42,64,0.4);
       border: 1px solid rgba(201,168,76,0.2);
-      padding: 2rem;
-      min-height: 200px;
+      padding: 2.5rem;
+      min-height: 380px;
       margin-bottom: 1.5rem;
       text-align: left;
     }
 
     .oracle-messages {
-      min-height: 150px;
-      max-height: 450px;
+      min-height: 300px;
+      max-height: 550px;
       overflow-y: auto;
       margin-bottom: 1.5rem;
       scroll-behavior: smooth;
@@ -361,28 +371,24 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .msg-user {
-      text-align: right;
-    }
+    .msg-user { text-align: right; }
 
     .msg-user .msg-bubble {
       display: inline-block;
       background: rgba(201,168,76,0.15);
       border: 1px solid rgba(201,168,76,0.3);
-      padding: 0.8rem 1.2rem;
+      padding: 1rem 1.5rem;
       max-width: 85%;
       font-family: 'Lato', sans-serif;
-      font-size: 0.95rem;
+      font-size: 1.1rem;
       color: var(--gold-light);
     }
 
-    .msg-word {
-      text-align: left;
-    }
+    .msg-word { text-align: left; }
 
     .msg-word .msg-label {
       font-family: 'Cinzel', serif;
-      font-size: 0.7rem;
+      font-size: 0.85rem;
       letter-spacing: 3px;
       color: var(--gold);
       margin-bottom: 0.4rem;
@@ -393,23 +399,32 @@
       display: inline-block;
       background: rgba(7,16,24,0.6);
       border: 1px solid rgba(201,168,76,0.1);
-      padding: 1.2rem 1.5rem;
+      padding: 1.5rem 2rem;
       max-width: 90%;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       color: var(--light);
       line-height: 1.8;
     }
 
     .oracle-welcome {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
+      font-size: 1.4rem;
       font-style: italic;
       color: var(--light);
-      opacity: 0.5;
+      opacity: 0.35;
       text-align: center;
-      padding: 3rem 1rem;
-      line-height: 1.8;
+      padding: 5rem 2rem;
+      line-height: 1.9;
+    }
+
+    .oracle-welcome .sample-q {
+      display: block;
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      opacity: 0.5;
+      font-style: normal;
+      color: var(--gold-light);
     }
 
     .oracle-input-row {
@@ -422,28 +437,29 @@
       background: rgba(7,16,24,0.6);
       border: 1px solid rgba(201,168,76,0.25);
       border-right: none;
-      padding: 1rem 1.2rem;
+      padding: 1.2rem 1.5rem;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       color: var(--light);
       outline: none;
       transition: border-color 0.3s;
     }
 
-    .oracle-input::placeholder { color: rgba(245,240,232,0.3); }
+    .oracle-input::placeholder { color: rgba(245,240,232,0.25); }
     .oracle-input:focus { border-color: var(--gold); }
 
     .oracle-send {
       background: linear-gradient(135deg, var(--gold), var(--gold-light));
       border: none;
-      padding: 1rem 1.8rem;
+      padding: 1.2rem 2.2rem;
       font-family: 'Cinzel', serif;
-      font-size: 0.8rem;
+      font-size: 0.95rem;
       letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--deep);
       cursor: pointer;
       transition: all 0.3s;
+      font-weight: 700;
     }
 
     .oracle-send:hover { background: linear-gradient(135deg, var(--gold-light), var(--gold)); }
@@ -456,18 +472,18 @@
     .oracle-exhausted {
       display: none;
       text-align: center;
-      padding: 1.5rem;
+      padding: 2rem;
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
+      font-size: 1.3rem;
       font-style: italic;
       color: var(--gold-light);
       line-height: 1.7;
     }
 
     /* Loading dots */
-    .loading-dots { display: inline-flex; gap: 4px; align-items: center; }
+    .loading-dots { display: inline-flex; gap: 5px; align-items: center; }
     .loading-dots span {
-      width: 6px; height: 6px; border-radius: 50%;
+      width: 8px; height: 8px; border-radius: 50%;
       background: var(--gold);
       animation: dotPulse 1.2s ease-in-out infinite;
     }
@@ -485,14 +501,14 @@
     }
 
     .crisis-inner {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
       text-align: center;
     }
 
     .crisis h3 {
       font-family: 'Cinzel', serif;
-      font-size: 1rem;
+      font-size: 1.2rem;
       color: var(--gold);
       letter-spacing: 3px;
       margin-bottom: 2rem;
@@ -500,14 +516,14 @@
 
     .crisis-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 1.5rem;
     }
 
     .crisis-card {
       background: rgba(7,16,24,0.5);
       border: 1px solid rgba(201,168,76,0.12);
-      padding: 1.5rem;
+      padding: 1.8rem;
       text-decoration: none;
       transition: all 0.3s;
     }
@@ -519,7 +535,7 @@
 
     .crisis-card .cc-name {
       font-family: 'Cinzel', serif;
-      font-size: 0.85rem;
+      font-size: 0.95rem;
       color: var(--gold-light);
       letter-spacing: 1px;
       margin-bottom: 0.4rem;
@@ -527,7 +543,7 @@
 
     .crisis-card .cc-number {
       font-family: 'Lato', sans-serif;
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--warm-white);
       margin-bottom: 0.3rem;
@@ -535,7 +551,7 @@
 
     .crisis-card .cc-desc {
       font-family: 'Lato', sans-serif;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       color: var(--light);
       opacity: 0.5;
     }
@@ -548,34 +564,39 @@
     }
 
     .heavens-inner {
-      max-width: 700px;
+      max-width: 750px;
       margin: 0 auto;
     }
 
     .heavens-care h2 {
       font-family: 'Cinzel', serif;
-      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
       color: var(--gold);
       margin-bottom: 0.5rem;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     .heavens-tagline {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.2rem;
+      font-size: 1.45rem;
       font-style: italic;
       color: var(--light);
-      opacity: 0.7;
+      opacity: 0.8;
       margin-bottom: 2.5rem;
     }
 
     .heavens-body {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.15rem;
+      font-size: 1.35rem;
       color: var(--light);
       line-height: 1.9;
       margin-bottom: 2.5rem;
       opacity: 0.85;
+    }
+
+    .heavens-body strong {
+      color: var(--gold-light);
+      font-weight: 700;
     }
 
     .heavens-phone-link {
@@ -590,13 +611,13 @@
     .heavens-phone-box {
       background: rgba(201,168,76,0.08);
       border: 2px solid rgba(201,168,76,0.35);
-      padding: 1.8rem 3rem;
+      padding: 2rem 3.5rem;
       text-align: center;
     }
 
     .heavens-phone-label {
       font-family: 'Lato', sans-serif;
-      font-size: 0.75rem;
+      font-size: 0.85rem;
       letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--gold);
@@ -606,7 +627,7 @@
 
     .heavens-phone-number {
       font-family: 'Cinzel', serif;
-      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      font-size: clamp(1.8rem, 4.5vw, 2.8rem);
       color: var(--warm-white);
       font-weight: 700;
       letter-spacing: 3px;
@@ -614,7 +635,7 @@
 
     .heavens-phone-hours {
       font-family: 'Lato', sans-serif;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       color: var(--gold-light);
       margin-top: 0.5rem;
       opacity: 0.6;
@@ -622,7 +643,7 @@
 
     .heavens-scripture {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.1rem;
+      font-size: 1.25rem;
       font-style: italic;
       color: var(--gold-light);
       margin-bottom: 0.5rem;
@@ -631,7 +652,7 @@
 
     .heavens-cite {
       font-family: 'Cinzel', serif;
-      font-size: 0.75rem;
+      font-size: 0.85rem;
       color: var(--gold);
       letter-spacing: 2px;
       margin-bottom: 3rem;
@@ -647,11 +668,11 @@
     .donate-btn {
       display: inline-block;
       font-family: 'Cinzel', serif;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       letter-spacing: 3px;
       text-transform: uppercase;
       text-decoration: none;
-      padding: 0.9rem 2.5rem;
+      padding: 1rem 2.8rem;
       transition: all 0.3s;
     }
 
@@ -677,14 +698,70 @@
       background: rgba(201,168,76,0.08);
     }
 
-    @media (max-width: 600px) {
-      .heavens-phone-box { padding: 1.4rem 1.5rem; }
-      .heavens-donate-row { flex-direction: column; align-items: center; }
+    /* ─── MUSIC SECTION ─── */
+    .music-gift {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: var(--deep);
+    }
+
+    .music-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .music-gift h2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .music-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-style: italic;
+      color: var(--light);
+      opacity: 0.6;
+      margin-bottom: 2.5rem;
+    }
+
+    .music-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: var(--gold-light);
+      max-width: 600px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+      opacity: 0.8;
+    }
+
+    .youtube-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border: 1px solid rgba(201,168,76,0.2);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+    }
+
+    .youtube-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
     }
 
     /* ─── FOOTER ─── */
     footer {
-      padding: 3rem 2rem;
+      padding: 3.5rem 2rem;
       text-align: center;
       background: var(--deep);
       border-top: 1px solid rgba(201,168,76,0.1);
@@ -692,7 +769,7 @@
 
     footer p {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1rem;
+      font-size: 1.15rem;
       font-style: italic;
       color: var(--light);
       opacity: 0.5;
@@ -701,7 +778,7 @@
 
     footer cite {
       font-family: 'Cinzel', serif;
-      font-size: 0.75rem;
+      font-size: 0.85rem;
       color: var(--gold);
       letter-spacing: 2px;
       font-style: normal;
@@ -717,7 +794,7 @@
 
     .footer-links a {
       font-family: 'Lato', sans-serif;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       color: var(--gold);
       text-decoration: none;
       letter-spacing: 2px;
@@ -730,13 +807,18 @@
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 600px) {
+      body { font-size: 16px; }
       .hero-content { padding: 1.5rem; }
-      .oracle-chat { padding: 1.2rem; }
+      .oracle-chat { padding: 1.5rem; min-height: 280px; }
+      .oracle-messages { min-height: 220px; }
       .oracle-input-row { flex-direction: column; }
       .oracle-input { border-right: 1px solid rgba(201,168,76,0.25); border-bottom: none; }
-      .oracle-send { padding: 0.8rem; }
+      .oracle-send { padding: 1rem; }
       .crisis-grid { grid-template-columns: 1fr; }
       .footer-links { gap: 1rem; }
+      .heavens-phone-box { padding: 1.5rem 1.5rem; }
+      .heavens-donate-row { flex-direction: column; align-items: center; }
+      .youtube-wrapper { max-width: 100%; }
     }
   </style>
 </head>
@@ -760,19 +842,19 @@
 <section class="intro">
   <div class="intro-inner">
     <div class="gold-rule" style="margin-bottom: 3rem;"></div>
-    <h2>You Don't Need an Appointment.<br>You Need the Truth.</h2>
+    <h2>You Don't Need an Appointment.<br>You Need the <span style="color:var(--gold-light)">Truth</span>.</h2>
     <p>
       There are nights when the weight of it all doesn't wait for business hours.
-      The guilt. The questions. The silence that feels like an answer you're afraid to hear.
+      The <strong>guilt</strong>. The <strong>questions</strong>. The silence that feels like an answer you're afraid to hear.
     </p>
     <p>
       <strong>The Living Word</strong> is a private, scripture-rooted space where you can bring
-      whatever you're carrying — doubt, shame, anger, confusion — and receive counsel
+      whatever you're carrying — <strong>doubt</strong>, <strong>shame</strong>, <strong>anger</strong>, <strong>confusion</strong> — and receive counsel
       drawn directly from the Bible. No judgment. No waiting room. No human eyes.
     </p>
     <p>
       You get <strong>three questions</strong>. That's not a limitation — it's an invitation
-      to ask what truly matters.
+      to ask what <strong>truly matters</strong>.
     </p>
   </div>
 </section>
@@ -801,7 +883,7 @@
 <!-- ═══════ CHAIN BREAK / SCRIPTURE ═══════ -->
 <section class="chain-break">
   <div class="gold-rule" style="margin-bottom: 3rem;"></div>
-  <blockquote>"Then you will know the truth, and the truth shall set you free."</blockquote>
+  <blockquote>"Then you will know the <span style="color:var(--gold);font-weight:700;">truth</span>, and the truth shall set you <span style="color:var(--gold);font-weight:700;">free</span>."</blockquote>
   <cite>— John 8:32</cite>
   <div class="gold-rule" style="margin-top: 3rem;"></div>
 </section>
@@ -811,7 +893,7 @@
   <div class="oracle-container">
     <div class="oracle-header">
       <h2>The Living Word</h2>
-      <p class="oracle-subtitle">Three questions. Choose wisely.</p>
+      <p class="oracle-subtitle"><strong>Three Questions.</strong> <em>Choose wisely.</em></p>
     </div>
 
     <div class="question-counter">
@@ -826,6 +908,7 @@
         <div class="oracle-welcome">
           What weighs on your heart?<br>
           Speak it here. The Word is listening.
+          <span class="sample-q">"How do I forgive someone who never apologized?"</span>
         </div>
       </div>
     </div>
@@ -839,7 +922,7 @@
       Your three questions have been answered.<br>
       Sit with what you've received.<br><br>
       <em>"Be still, and know that I am God."</em><br>
-      <span style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:3px; color:var(--gold);">— Psalm 46:10</span>
+      <span style="font-family:'Cinzel',serif; font-size:0.85rem; letter-spacing:3px; color:var(--gold);">— Psalm 46:10</span>
     </div>
   </div>
 </section>
@@ -876,7 +959,7 @@
     <p class="heavens-tagline">An ear that will listen. A voice that will comfort.</p>
 
     <p class="heavens-body">
-      Sometimes you don't need a screen. You need a voice.
+      Sometimes you don't need a screen. You need a <strong>voice</strong>.
       Someone who picks up the phone and says, <strong>"I hear you."</strong>
       Heaven is where you prepare it — and preparation starts with being heard.
     </p>
@@ -895,6 +978,24 @@
     <div class="heavens-donate-row">
       <a href="https://www.webelievenyou.com/community.html" class="donate-btn primary">Join the Community</a>
       <a href="mailto:powell@webelievenyou.com?subject=I%20Want%20To%20Help" class="donate-btn secondary">Make a Donation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ A GIFT OF MUSIC ═══════ -->
+<section class="music-gift">
+  <div class="music-inner">
+    <div class="gold-rule" style="margin-bottom: 3rem;"></div>
+    <h2>A Gift of Music</h2>
+    <p class="music-tagline">Releasing your fears is the first step to leaving the baggage of guilt behind.</p>
+    <p class="music-quote">"Confessing your fears is the first step to leaving the baggage of guilt behind — so you can reach the <strong style="color:var(--gold);">true destiny</strong> God intended you to have."</p>
+    <div class="youtube-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/NJsa6-y4sDs?rel=0&modestbranding=1&color=white"
+        title="Céline Dion — I'm Alive"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
     </div>
   </div>
 </section>
@@ -919,7 +1020,6 @@
   const MAX_QUESTIONS = 3;
   let questionsUsed = parseInt(sessionStorage.getItem('lw_used') || '0');
 
-  // Initialize dot state on load
   function updateDots() {
     for (let i = 1; i <= 3; i++) {
       const dot = document.getElementById('dot' + i);
@@ -933,13 +1033,11 @@
   }
   updateDots();
 
-  // Check if already exhausted
   if (questionsUsed >= MAX_QUESTIONS) {
     document.getElementById('inputRow').style.display = 'none';
     document.getElementById('exhausted').style.display = 'block';
   }
 
-  // Enter key to send
   document.getElementById('userInput').addEventListener('keydown', function(e) {
     if (e.key === 'Enter') askTheWord();
   });
@@ -952,11 +1050,9 @@
     const messagesEl = document.getElementById('messages');
     const sendBtn = document.getElementById('sendBtn');
 
-    // Clear welcome on first question
     const welcome = messagesEl.querySelector('.oracle-welcome');
     if (welcome) welcome.remove();
 
-    // Show user message
     const userMsg = document.createElement('div');
     userMsg.className = 'msg msg-user';
     userMsg.innerHTML = '<div class="msg-bubble">' + escapeHtml(question) + '</div>';
@@ -966,7 +1062,6 @@
     sendBtn.disabled = true;
     input.disabled = true;
 
-    // Show loading
     const loadingMsg = document.createElement('div');
     loadingMsg.className = 'msg msg-word';
     loadingMsg.innerHTML = '<div class="msg-label">The Living Word</div><div class="msg-bubble"><div class="loading-dots"><span></span><span></span><span></span></div></div>';
@@ -981,11 +1076,8 @@
       });
 
       const data = await resp.json();
-
-      // Remove loading
       loadingMsg.remove();
 
-      // Show response
       const wordMsg = document.createElement('div');
       wordMsg.className = 'msg msg-word';
       const responseText = data.response || data.answer || data.content ||
@@ -1006,11 +1098,9 @@
       return;
     }
 
-    // Update counter
     questionsUsed++;
     sessionStorage.setItem('lw_used', questionsUsed);
     updateDots();
-
     messagesEl.scrollTop = messagesEl.scrollHeight;
 
     if (questionsUsed >= MAX_QUESTIONS) {
