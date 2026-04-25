@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Living Word | We Believe In You</title>
+  <meta name="description" content="Bring your questions, your doubt, your guilt. The Living Word is a private, scripture-rooted counsel — available anytime, no judgment, no appointment.">
+  <meta property="og:title" content="The Living Word | We Believe In You">
+  <meta property="og:description" content="Three questions. Choose wisely. Rooted in scripture. Available at 2AM.">
+  <meta property="og:url" content="https://www.webelievenyou.com/livingword.html">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://www.webelievenyou.com/livingword.html">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-light: #E8D5A3;
+      --gold-glow: #D4AF37;
+      --navy: #1B2A40;
+      --deep: #071018;
+      --dark: #1a2e42;
+      --light: #F5F0E8;
+      --warm-white: #FAF7F2;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Lato', sans-serif;
+      background: var(--deep);
+      color: var(--light);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('mountain-top.webp') center center / cover no-repeat;
+      filter: brightness(0.45) saturate(1.2);
+      z-index: 0;
+    }
+
+    .hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(7,16,24,0.3) 0%,
+        rgba(7,16,24,0.1) 40%,
+        rgba(7,16,24,0.6) 80%,
+        rgba(7,16,24,0.95) 100%
+      );
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 2rem;
+      animation: heroFadeIn 2s ease-out;
+    }
+
+    @keyframes heroFadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-eyebrow {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 700;
+      color: var(--warm-white);
+      line-height: 1.15;
+      margin-bottom: 1rem;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.6);
+    }
+
+    .hero h1 .gold { color: var(--gold); }
+
+    .hero-scripture {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+      font-style: italic;
+      color: var(--gold-light);
+      max-width: 600px;
+      margin: 0 auto 0.6rem;
+      line-height: 1.6;
+    }
+
+    .hero-cite {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-foundation {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: rgba(245,240,232,0.6);
+      margin-bottom: 2rem;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.95rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--deep);
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      padding: 1rem 3rem;
+      text-decoration: none;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 25px rgba(201,168,76,0.3);
+    }
+
+    .hero-cta:hover {
+      background: linear-gradient(135deg, var(--gold-light), var(--gold));
+      transform: translateY(-2px);
+      box-shadow: 0 8px 35px rgba(201,168,76,0.5);
+    }
+
+    /* ─── DIVIDER ─── */
+    .gold-rule {
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0 auto;
+    }
+
+    /* ─── INTRO SECTION ─── */
+    .intro {
+      padding: 6rem 2rem;
+      text-align: center;
+      background: linear-gradient(180deg, var(--deep) 0%, var(--navy) 100%);
+    }
+
+    .intro-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .intro h2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      color: var(--gold);
+      margin-bottom: 2rem;
+      font-weight: 600;
+    }
+
+    .intro p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem;
+      color: var(--light);
+      line-height: 1.9;
+      margin-bottom: 1.5rem;
+      opacity: 0.9;
+    }
+
+    .intro p strong {
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+
+    /* ─── THREE STEPS ─── */
+    .steps {
+      padding: 5rem 2rem;
+      background: var(--navy);
+    }
+
+    .steps-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .step-card {
+      text-align: center;
+      padding: 3rem 2rem;
+      background: rgba(7,16,24,0.5);
+      border: 1px solid rgba(201,168,76,0.15);
+      transition: all 0.4s ease;
+    }
+
+    .step-card:hover {
+      border-color: rgba(201,168,76,0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    }
+
+    .step-number {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--gold);
+      opacity: 0.3;
+      margin-bottom: 0.5rem;
+    }
+
+    .step-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      color: var(--gold-light);
+      margin-bottom: 1rem;
+      letter-spacing: 2px;
+    }
+
+    .step-card p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--light);
+      opacity: 0.8;
+      line-height: 1.7;
+    }
+
+    /* ─── CHAIN BREAK / SCRIPTURE ─── */
+    .chain-break {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: linear-gradient(180deg, var(--navy) 0%, var(--deep) 100%);
+    }
+
+    .chain-break blockquote {
+      max-width: 650px;
+      margin: 0 auto;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-style: italic;
+      color: var(--warm-white);
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .chain-break cite {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      color: var(--gold);
+      letter-spacing: 3px;
+      font-style: normal;
+    }
+
+    /* ─── ORACLE SECTION ─── */
+    .oracle-section {
+      padding: 5rem 2rem;
+      background: var(--deep);
+    }
+
+    .oracle-container {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .oracle-header h2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+
+    .oracle-subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-style: italic;
+      color: var(--light);
+      opacity: 0.7;
+      margin-bottom: 2rem;
+    }
+
+    /* Gold dot counter */
+    .question-counter {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 2rem;
+    }
+
+    .q-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 10px rgba(201,168,76,0.5);
+      transition: all 0.5s ease;
+    }
+
+    .q-dot.used {
+      background: rgba(201,168,76,0.15);
+      box-shadow: none;
+    }
+
+    .counter-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.8rem;
+      color: var(--gold);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      opacity: 0.7;
+    }
+
+    /* Chat interface */
+    .oracle-chat {
+      background: rgba(27,42,64,0.4);
+      border: 1px solid rgba(201,168,76,0.2);
+      padding: 2rem;
+      min-height: 200px;
+      margin-bottom: 1.5rem;
+      text-align: left;
+    }
+
+    .oracle-messages {
+      min-height: 150px;
+      max-height: 450px;
+      overflow-y: auto;
+      margin-bottom: 1.5rem;
+      scroll-behavior: smooth;
+    }
+
+    .oracle-messages::-webkit-scrollbar { width: 4px; }
+    .oracle-messages::-webkit-scrollbar-track { background: transparent; }
+    .oracle-messages::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+    .msg {
+      margin-bottom: 1.5rem;
+      animation: msgFade 0.6s ease-out;
+    }
+
+    @keyframes msgFade {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .msg-user {
+      text-align: right;
+    }
+
+    .msg-user .msg-bubble {
+      display: inline-block;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 0.8rem 1.2rem;
+      max-width: 85%;
+      font-family: 'Lato', sans-serif;
+      font-size: 0.95rem;
+      color: var(--gold-light);
+    }
+
+    .msg-word {
+      text-align: left;
+    }
+
+    .msg-word .msg-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+    }
+
+    .msg-word .msg-bubble {
+      display: inline-block;
+      background: rgba(7,16,24,0.6);
+      border: 1px solid rgba(201,168,76,0.1);
+      padding: 1.2rem 1.5rem;
+      max-width: 90%;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--light);
+      line-height: 1.8;
+    }
+
+    .oracle-welcome {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--light);
+      opacity: 0.5;
+      text-align: center;
+      padding: 3rem 1rem;
+      line-height: 1.8;
+    }
+
+    .oracle-input-row {
+      display: flex;
+      gap: 0;
+    }
+
+    .oracle-input {
+      flex: 1;
+      background: rgba(7,16,24,0.6);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-right: none;
+      padding: 1rem 1.2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--light);
+      outline: none;
+      transition: border-color 0.3s;
+    }
+
+    .oracle-input::placeholder { color: rgba(245,240,232,0.3); }
+    .oracle-input:focus { border-color: var(--gold); }
+
+    .oracle-send {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      border: none;
+      padding: 1rem 1.8rem;
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--deep);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .oracle-send:hover { background: linear-gradient(135deg, var(--gold-light), var(--gold)); }
+
+    .oracle-send:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .oracle-exhausted {
+      display: none;
+      text-align: center;
+      padding: 1.5rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--gold-light);
+      line-height: 1.7;
+    }
+
+    /* Loading dots */
+    .loading-dots { display: inline-flex; gap: 4px; align-items: center; }
+    .loading-dots span {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold);
+      animation: dotPulse 1.2s ease-in-out infinite;
+    }
+    .loading-dots span:nth-child(2) { animation-delay: 0.2s; }
+    .loading-dots span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes dotPulse {
+      0%, 80%, 100% { opacity: 0.2; transform: scale(0.8); }
+      40% { opacity: 1; transform: scale(1); }
+    }
+
+    /* ─── CRISIS CARDS ─── */
+    .crisis {
+      padding: 4rem 2rem;
+      background: var(--navy);
+    }
+
+    .crisis-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .crisis h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      color: var(--gold);
+      letter-spacing: 3px;
+      margin-bottom: 2rem;
+    }
+
+    .crisis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .crisis-card {
+      background: rgba(7,16,24,0.5);
+      border: 1px solid rgba(201,168,76,0.12);
+      padding: 1.5rem;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .crisis-card:hover {
+      border-color: rgba(201,168,76,0.35);
+      transform: translateY(-2px);
+    }
+
+    .crisis-card .cc-name {
+      font-family: 'Cinzel', serif;
+      font-size: 0.85rem;
+      color: var(--gold-light);
+      letter-spacing: 1px;
+      margin-bottom: 0.4rem;
+    }
+
+    .crisis-card .cc-number {
+      font-family: 'Lato', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--warm-white);
+      margin-bottom: 0.3rem;
+    }
+
+    .crisis-card .cc-desc {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.8rem;
+      color: var(--light);
+      opacity: 0.5;
+    }
+
+    /* ─── HEAVENS URGENT CARE ─── */
+    .heavens-care {
+      padding: 5rem 2rem;
+      text-align: center;
+      background: linear-gradient(180deg, var(--navy) 0%, var(--deep) 100%);
+    }
+
+    .heavens-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .heavens-care h2 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .heavens-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--light);
+      opacity: 0.7;
+      margin-bottom: 2.5rem;
+    }
+
+    .heavens-body {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      color: var(--light);
+      line-height: 1.9;
+      margin-bottom: 2.5rem;
+      opacity: 0.85;
+    }
+
+    .heavens-phone-link {
+      display: inline-block;
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: transform 0.3s;
+    }
+
+    .heavens-phone-link:hover { transform: scale(1.03); }
+
+    .heavens-phone-box {
+      background: rgba(201,168,76,0.08);
+      border: 2px solid rgba(201,168,76,0.35);
+      padding: 1.8rem 3rem;
+      text-align: center;
+    }
+
+    .heavens-phone-label {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      opacity: 0.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .heavens-phone-number {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: var(--warm-white);
+      font-weight: 700;
+      letter-spacing: 3px;
+    }
+
+    .heavens-phone-hours {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.8rem;
+      color: var(--gold-light);
+      margin-top: 0.5rem;
+      opacity: 0.6;
+    }
+
+    .heavens-scripture {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+      opacity: 0.8;
+    }
+
+    .heavens-cite {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+      margin-bottom: 3rem;
+    }
+
+    .heavens-donate-row {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .donate-btn {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.9rem 2.5rem;
+      transition: all 0.3s;
+    }
+
+    .donate-btn.primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      color: var(--deep);
+      box-shadow: 0 4px 20px rgba(201,168,76,0.25);
+    }
+
+    .donate-btn.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201,168,76,0.4);
+    }
+
+    .donate-btn.secondary {
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.4);
+    }
+
+    .donate-btn.secondary:hover {
+      border-color: var(--gold);
+      background: rgba(201,168,76,0.08);
+    }
+
+    @media (max-width: 600px) {
+      .heavens-phone-box { padding: 1.4rem 1.5rem; }
+      .heavens-donate-row { flex-direction: column; align-items: center; }
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 3rem 2rem;
+      text-align: center;
+      background: var(--deep);
+      border-top: 1px solid rgba(201,168,76,0.1);
+    }
+
+    footer p {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--light);
+      opacity: 0.5;
+      margin-bottom: 0.5rem;
+    }
+
+    footer cite {
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+      font-style: normal;
+    }
+
+    .footer-links {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      font-family: 'Lato', sans-serif;
+      font-size: 0.8rem;
+      color: var(--gold);
+      text-decoration: none;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.6;
+      transition: opacity 0.3s;
+    }
+
+    .footer-links a:hover { opacity: 1; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 600px) {
+      .hero-content { padding: 1.5rem; }
+      .oracle-chat { padding: 1.2rem; }
+      .oracle-input-row { flex-direction: column; }
+      .oracle-input { border-right: 1px solid rgba(201,168,76,0.25); border-bottom: none; }
+      .oracle-send { padding: 0.8rem; }
+      .crisis-grid { grid-template-columns: 1fr; }
+      .footer-links { gap: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════ HERO ═══════ -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-gradient"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">We Believe In You</p>
+    <h1>The <span class="gold">Living</span> Word</h1>
+    <p class="hero-scripture">"In the beginning was the Word, and the Word was with God, and the Word was God."</p>
+    <p class="hero-cite">— John 1:1</p>
+    <p class="hero-foundation">Built on the foundation at the mountain top.</p>
+    <a href="#oracle" class="hero-cta">Seek The Word</a>
+  </div>
+</section>
+
+<!-- ═══════ INTRO ═══════ -->
+<section class="intro">
+  <div class="intro-inner">
+    <div class="gold-rule" style="margin-bottom: 3rem;"></div>
+    <h2>You Don't Need an Appointment.<br>You Need the Truth.</h2>
+    <p>
+      There are nights when the weight of it all doesn't wait for business hours.
+      The guilt. The questions. The silence that feels like an answer you're afraid to hear.
+    </p>
+    <p>
+      <strong>The Living Word</strong> is a private, scripture-rooted space where you can bring
+      whatever you're carrying — doubt, shame, anger, confusion — and receive counsel
+      drawn directly from the Bible. No judgment. No waiting room. No human eyes.
+    </p>
+    <p>
+      You get <strong>three questions</strong>. That's not a limitation — it's an invitation
+      to ask what truly matters.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════ THREE STEPS ═══════ -->
+<section class="steps">
+  <div class="steps-grid">
+    <div class="step-card">
+      <div class="step-number">I</div>
+      <h3>Come As You Are</h3>
+      <p>No login. No profile. No one watching. Just you and the Word. Bring your real question — the one you've been afraid to say out loud.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-number">II</div>
+      <h3>Speak It Out</h3>
+      <p>Type what's on your heart. The Living Word listens without flinching, without judgment, without rushing you toward an answer you're not ready for.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-number">III</div>
+      <h3>Receive the Truth</h3>
+      <p>Scripture-grounded counsel meets you where you are. Not a sermon. Not a lecture. A word that speaks directly to what you asked — rooted in the Bible, delivered with grace.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CHAIN BREAK / SCRIPTURE ═══════ -->
+<section class="chain-break">
+  <div class="gold-rule" style="margin-bottom: 3rem;"></div>
+  <blockquote>"Then you will know the truth, and the truth shall set you free."</blockquote>
+  <cite>— John 8:32</cite>
+  <div class="gold-rule" style="margin-top: 3rem;"></div>
+</section>
+
+<!-- ═══════ ORACLE ═══════ -->
+<section class="oracle-section" id="oracle">
+  <div class="oracle-container">
+    <div class="oracle-header">
+      <h2>The Living Word</h2>
+      <p class="oracle-subtitle">Three questions. Choose wisely.</p>
+    </div>
+
+    <div class="question-counter">
+      <div class="q-dot" id="dot1"></div>
+      <div class="q-dot" id="dot2"></div>
+      <div class="q-dot" id="dot3"></div>
+    </div>
+    <p class="counter-label" id="counterLabel">3 Questions Remaining</p>
+
+    <div class="oracle-chat">
+      <div class="oracle-messages" id="messages">
+        <div class="oracle-welcome">
+          What weighs on your heart?<br>
+          Speak it here. The Word is listening.
+        </div>
+      </div>
+    </div>
+
+    <div class="oracle-input-row" id="inputRow">
+      <input type="text" class="oracle-input" id="userInput" placeholder="Ask what truly matters..." maxlength="500">
+      <button class="oracle-send" id="sendBtn" onclick="askTheWord()">Ask</button>
+    </div>
+
+    <div class="oracle-exhausted" id="exhausted">
+      Your three questions have been answered.<br>
+      Sit with what you've received.<br><br>
+      <em>"Be still, and know that I am God."</em><br>
+      <span style="font-family:'Cinzel',serif; font-size:0.75rem; letter-spacing:3px; color:var(--gold);">— Psalm 46:10</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CRISIS RESOURCES ═══════ -->
+<section class="crisis">
+  <div class="crisis-inner">
+    <h3>If You Need Someone Now</h3>
+    <div class="crisis-grid">
+      <a href="tel:988" class="crisis-card">
+        <div class="cc-name">Suicide & Crisis Lifeline</div>
+        <div class="cc-number">988</div>
+        <div class="cc-desc">Call or text, 24/7</div>
+      </a>
+      <a href="sms:741741?body=HELLO" class="crisis-card">
+        <div class="cc-name">Crisis Text Line</div>
+        <div class="cc-number">Text HOME to 741741</div>
+        <div class="cc-desc">Free, confidential support</div>
+      </a>
+      <a href="tel:18007994889" class="crisis-card">
+        <div class="cc-name">SAMHSA Helpline</div>
+        <div class="cc-number">1-800-799-4889</div>
+        <div class="cc-desc">Substance abuse & mental health</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ HEAVEN'S URGENT CARE ═══════ -->
+<section class="heavens-care">
+  <div class="heavens-inner">
+    <div class="gold-rule" style="margin-bottom: 3rem;"></div>
+    <h2>Heaven's Urgent Care</h2>
+    <p class="heavens-tagline">An ear that will listen. A voice that will comfort.</p>
+
+    <p class="heavens-body">
+      Sometimes you don't need a screen. You need a voice.
+      Someone who picks up the phone and says, <strong>"I hear you."</strong>
+      Heaven is where you prepare it — and preparation starts with being heard.
+    </p>
+
+    <a href="tel:18004282022" class="heavens-phone-link">
+      <div class="heavens-phone-box">
+        <div class="heavens-phone-label">Call Us Anytime</div>
+        <div class="heavens-phone-number">1-800-428-2022</div>
+        <div class="heavens-phone-hours">Toll-Free</div>
+      </div>
+    </a>
+
+    <p class="heavens-scripture">"Come to me, all you who are weary and burdened, and I will give you rest."</p>
+    <p class="heavens-cite">— Matthew 11:28</p>
+
+    <div class="heavens-donate-row">
+      <a href="https://www.webelievenyou.com/community.html" class="donate-btn primary">Join the Community</a>
+      <a href="mailto:powell@webelievenyou.com?subject=I%20Want%20To%20Help" class="donate-btn secondary">Make a Donation</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <p>"Store up for yourselves treasures in heaven."</p>
+  <cite>— Matthew 6:20</cite>
+  <div class="footer-links">
+    <a href="https://www.webelievenyou.com">Home</a>
+    <a href="https://www.webelievenyou.com/community.html">Community</a>
+    <a href="https://www.ibelievenyou.com">I Believe In You</a>
+    <a href="https://www.believeinyourself.com">Believe In Yourself</a>
+    <a href="https://www.powparker.com">Powell Parker</a>
+    <a href="tel:18004282022">1-800-428-2022</a>
+  </div>
+</footer>
+
+<!-- ═══════ ORACLE ENGINE ═══════ -->
+<script>
+  const WORKER_URL = 'https://emet-oracle.powell-6af.workers.dev';
+  const MAX_QUESTIONS = 3;
+  let questionsUsed = parseInt(sessionStorage.getItem('lw_used') || '0');
+
+  // Initialize dot state on load
+  function updateDots() {
+    for (let i = 1; i <= 3; i++) {
+      const dot = document.getElementById('dot' + i);
+      if (i <= questionsUsed) dot.classList.add('used');
+      else dot.classList.remove('used');
+    }
+    const remaining = MAX_QUESTIONS - questionsUsed;
+    document.getElementById('counterLabel').textContent =
+      remaining === 0 ? 'No questions remaining' :
+      remaining + ' Question' + (remaining > 1 ? 's' : '') + ' Remaining';
+  }
+  updateDots();
+
+  // Check if already exhausted
+  if (questionsUsed >= MAX_QUESTIONS) {
+    document.getElementById('inputRow').style.display = 'none';
+    document.getElementById('exhausted').style.display = 'block';
+  }
+
+  // Enter key to send
+  document.getElementById('userInput').addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') askTheWord();
+  });
+
+  async function askTheWord() {
+    const input = document.getElementById('userInput');
+    const question = input.value.trim();
+    if (!question || questionsUsed >= MAX_QUESTIONS) return;
+
+    const messagesEl = document.getElementById('messages');
+    const sendBtn = document.getElementById('sendBtn');
+
+    // Clear welcome on first question
+    const welcome = messagesEl.querySelector('.oracle-welcome');
+    if (welcome) welcome.remove();
+
+    // Show user message
+    const userMsg = document.createElement('div');
+    userMsg.className = 'msg msg-user';
+    userMsg.innerHTML = '<div class="msg-bubble">' + escapeHtml(question) + '</div>';
+    messagesEl.appendChild(userMsg);
+
+    input.value = '';
+    sendBtn.disabled = true;
+    input.disabled = true;
+
+    // Show loading
+    const loadingMsg = document.createElement('div');
+    loadingMsg.className = 'msg msg-word';
+    loadingMsg.innerHTML = '<div class="msg-label">The Living Word</div><div class="msg-bubble"><div class="loading-dots"><span></span><span></span><span></span></div></div>';
+    messagesEl.appendChild(loadingMsg);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+
+    try {
+      const resp = await fetch(WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: question })
+      });
+
+      const data = await resp.json();
+
+      // Remove loading
+      loadingMsg.remove();
+
+      // Show response
+      const wordMsg = document.createElement('div');
+      wordMsg.className = 'msg msg-word';
+      const responseText = data.response || data.answer || data.content ||
+        (data.content && data.content[0] && data.content[0].text) ||
+        'Be still and know. The answer lives within the Word.';
+      wordMsg.innerHTML = '<div class="msg-label">The Living Word</div><div class="msg-bubble">' + escapeHtml(responseText) + '</div>';
+      messagesEl.appendChild(wordMsg);
+
+    } catch (err) {
+      loadingMsg.remove();
+      const errMsg = document.createElement('div');
+      errMsg.className = 'msg msg-word';
+      errMsg.innerHTML = '<div class="msg-label">The Living Word</div><div class="msg-bubble">The connection was lost. Please try again in a moment.</div>';
+      messagesEl.appendChild(errMsg);
+      sendBtn.disabled = false;
+      input.disabled = false;
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+      return;
+    }
+
+    // Update counter
+    questionsUsed++;
+    sessionStorage.setItem('lw_used', questionsUsed);
+    updateDots();
+
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+
+    if (questionsUsed >= MAX_QUESTIONS) {
+      document.getElementById('inputRow').style.display = 'none';
+      document.getElementById('exhausted').style.display = 'block';
+    } else {
+      sendBtn.disabled = false;
+      input.disabled = false;
+      input.focus();
+    }
+  }
+
+  function escapeHtml(str) {
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+</script>
+
+</body>
+</html>
